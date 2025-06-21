@@ -30,7 +30,7 @@ export function NavigationBar() {
   ];
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <div className="flex flex-col fixed w-full fixed top-0">
+    <div className="flex flex-col fixed w-full z-50 top-0">
       {sidebarOpen && (
         <div
           className="md:hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-30"
@@ -74,7 +74,7 @@ export function NavigationBar() {
 
       {/* Sidebar - mobile only */}
       <aside
-        className={`md:hidden fixed top-14 left-0 h-screen w-[30%] bg-white border-r shadow transition-transform duration-300 z-40 ${
+        className={`md:hidden fixed top-14 left-0 h-screen w-[40%] bg-white border-r shadow transition-transform duration-300 z-40 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

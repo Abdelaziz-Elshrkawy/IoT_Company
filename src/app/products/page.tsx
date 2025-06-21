@@ -2,9 +2,16 @@
 
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
-import { useEffect, useState } from "react";
-import { Products } from "@/helpers/products";
+import { Suspense, useEffect, useState } from "react";
+import {
+  constructProductImagePath,
+  Products,
+  productWhatsAppMessageConstructor,
+} from "@/helpers/products";
 import Link from "next/link";
+import { ProductI } from "@/types/types";
+import ProductUrl from "@/components/general/productUrl";
+import LoadingImage from "@/components/general/LoadingImage";
 
 export default function ProductPage() {
   const [animationkey, setAniamtionKey] = useState<string>();
@@ -25,41 +32,42 @@ export default function ProductPage() {
           <h2 className="text-3xl font-semibold mb-8 text-white border-b-2 border-gray-600 pb-2">
             {category}
           </h2>
-          <div className="grid md:grid-cols-4 gap-10">
-            {products.map((product, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+            {products.map((product: ProductI, index: number) => (
               <motion.div
-                className="bg-white rounded-xl shadow-lg p-6 flex flex-col justify-center items-center text-center"
-                key={`${category}-${product.name}-${index}`}
+                className="bg-white rounded-xl shadow-lg p-6 flex flex-col justify-evenly items-center text-center"
+                key={`${category.split(" ").join("_")}-${
+                  product.name
+                }-${index}`}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
                 initial={{ opacity: 0, y: 40 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Link href={`/products/${category}-${product.name}`}>
-                  <img
-                    src={product.image} // Assuming images are in the public directory
-                    alt={product.name}
-                    className="w-[80%] object-contain rounded-lg mb-4" // object-contain to prevent cropping
-                  />
-                </Link>
+                <Suspense fallback={<LoadingImage />}>
+                  <Link
+                    className="h-full flex justify-center"
+                    href={`/products/${category}-${product.urlName}`}
+                  >
+                    <img
+                      src={constructProductImagePath(product.name)}
+                      alt={product.name}
+                      className=" object-contain rounded-lg mb-4 hover:scale-105 transition-all duration-200"
+                    />
+                  </Link>
+                </Suspense>
                 <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                <p className="text-gray-800 mb-4 flex-grow">
+                {/* <p className="text-gray-800 mb-4 flex-grow">
                   {product.description}
-                </p>
+                </p> */}
                 {/*<p className="text-lg font-bold text-gray-900 mb-4">*/}
                 {/*    Price: {product.price_LE} L.E*/}
                 {/*</p>*/}
-                <a
-                  href={`https://wa.me/201234567890?text=${encodeURIComponent(
-                    product.whatsappMessage
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <ProductUrl
                   className="mt-auto inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Buy on WhatsApp
-                </a>
+                  categoryName={category}
+                  urlName={product.urlName}
+                  productName={product.name}
+                />
               </motion.div>
             ))}
           </div>

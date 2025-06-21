@@ -1,5 +1,7 @@
-import { useGetProduct } from "@/helpers/products";
-import { MessageCircle } from "lucide-react";
+import { constructProductImagePath, useGetProduct } from "@/helpers/products";
+import { ArrowLeftCircleIcon, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import ProductUrl from "../../../components/general/productUrl";
 
 export default async function product({
   params,
@@ -7,35 +9,39 @@ export default async function product({
   params: Promise<{ product: string }>;
 }) {
   const { product } = await params;
-  const currentProduct = useGetProduct(
-    decodeURI(product)?.split("-")[1].trim(),
-    decodeURI(product)?.split("-")[0].trim()
-  );
-  console.log(decodeURI(product)?.split("-")[1]);
+  const decodedProductName = decodeURIComponent(product).split("-");
+  const productName = decodedProductName[1]?.trim();
+  const categoryName = decodedProductName[0]?.trim().split("_").join(" ");
+  const currentProduct = useGetProduct(productName, categoryName);
+  console.log(productName);
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white px-6 py-12">
-      <div className="max-w-4xl mx-auto">
-        {/* <img
-          src={currentProduct.image}
+    <div className="h-full bg-white dark:bg-black text-black dark:text-white px-6 py-12">
+      <Link href="/products" className="absolute left-0 top-20">
+        <ArrowLeftCircleIcon
+          size={40}
+          className="hover:translate-x-[-2px] transition-all duration-200 cursor-pointer text-gray-900"
+        />
+      </Link>
+      <div className="max-w-4xl mx-auto flex flex-col justify-center lg:justify-start lg:items-start items-center text-center lg:text-left lg:flex-row gap-6">
+        <img
+          draggable={false}
+          src={constructProductImagePath(currentProduct.name)}
           alt={currentProduct.name}
-          className="w-full h-64 object-cover mb-8 border border-gray-300"
-        /> */}
-        <h1 className="text-3xl font-bold mb-4">{currentProduct.name}</h1>
-        <p className="text-lg text-gray-800 dark:text-gray-300 mb-6">
-          {currentProduct.description}
-        </p>
+          className="w-[80%] lg:w-[50%] object-cover mb-8 border border-gray-300"
+        />
+        <div>
+          <h1 className="text-3xl font-bold mb-4">{currentProduct.name}</h1>
+          <p className="text-lg text-gray-800 dark:text-gray-300 mb-6">
+            {currentProduct.description}
+          </p>
 
-        <a
-          href={`https://wa.me/201234567890?text=${encodeURIComponent(
-            currentProduct.whatsappMessage
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 text-sm"
-        >
-          <MessageCircle className="w-4 h-4 mr-2" />
-          Buy on WhatsApp
-        </a>
+          <ProductUrl
+            className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 text-sm"
+            categoryName={categoryName}
+            urlName={currentProduct.urlName}
+            productName={currentProduct.name}
+          />
+        </div>
       </div>
     </div>
   );

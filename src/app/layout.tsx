@@ -37,7 +37,7 @@ export default function RootLayout({
             <div className="absolute top-0 right-0 h-scree w-full blur-lg"></div>
           }
         >
-          <div className="mt-10">{children}</div>
+          <div className="mt-16">{children}</div>
         </Suspense>
         <Footer />
       </body>

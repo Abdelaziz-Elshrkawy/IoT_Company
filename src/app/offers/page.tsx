@@ -1,5 +1,6 @@
 "use client";
 
+import ComingSoon from "@/components/general/ComingSoon";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -42,8 +43,8 @@ export default function OffersPage() {
       <h1 className="text-4xl font-bold text-center text-white mb-4">
         Our Offers
       </h1>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+      <ComingSoon />
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {products.map((product, index) => (
           <motion.div
             key={product.id}
@@ -78,7 +79,7 @@ export default function OffersPage() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </div> */}
     </main>
   );
 }

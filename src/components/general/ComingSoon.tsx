@@ -1,6 +1,5 @@
 "use client";
 
-import { Clock, Hourglass, Construction } from "lucide-react";
 import Lottie from "react-lottie";
 import comingSoonAnimation from "../../../public/lottie/coming_soon.json";
 
@@ -17,8 +16,8 @@ export default function ComingSoon() {
         />
       </div>
       <p className="text-lg md:text-xl text-gray-600 max-w-xl">
-        We're working hard on this section. Stay tuned — something awesome is on
-        the way!
+        We are working hard on this section. Stay tuned — something awesome is
+        on the way!
       </p>
     </div>
   );

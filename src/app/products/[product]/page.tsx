@@ -1,9 +1,10 @@
-import { constructProductImagePath, useGetProduct } from "@/helpers/products";
-import { ArrowLeftCircleIcon, MessageCircle } from "lucide-react";
+import { constructProductImagePath, getProduct } from "@/helpers/products";
+import { ArrowLeftCircleIcon } from "lucide-react";
 import Link from "next/link";
 import ProductUrl from "../../../components/general/productUrl";
+import Image from "next/image";
 
-export default async function product({
+export default async function Product({
   params,
 }: {
   params: Promise<{ product: string }>;
@@ -12,18 +13,20 @@ export default async function product({
   const decodedProductName = decodeURIComponent(product).split("-");
   const productName = decodedProductName[1]?.trim();
   const categoryName = decodedProductName[0]?.trim().split("_").join(" ");
-  const currentProduct = useGetProduct(productName, categoryName);
-  console.log(productName);
+  const currentProduct = getProduct(productName, categoryName);
+
   return (
-    <div className="h-full bg-white dark:bg-black text-black dark:text-white px-6 py-12">
+    <div className="h-ful lg:h-[65vh] bg-white dark:bg-black text-black dark:text-white px-6 py-12">
       <Link href="/products" className="absolute left-0 top-20">
         <ArrowLeftCircleIcon
           size={40}
-          className="hover:translate-x-[-2px] transition-all duration-200 cursor-pointer text-gray-900"
+          className="hover:translate-x-[-2px] left-4 transition-all duration-200 cursor-pointer text-gray-900"
         />
       </Link>
       <div className="max-w-4xl mx-auto flex flex-col justify-center lg:justify-start lg:items-start items-center text-center lg:text-left lg:flex-row gap-6">
-        <img
+        <Image
+          width={300}
+          height={300}
           draggable={false}
           src={constructProductImagePath(currentProduct.name)}
           alt={currentProduct.name}

@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 export default function Footer() {
   return (
@@ -7,7 +8,13 @@ export default function Footer() {
         {/* Logo Section */}
         <div className="flex flex-col items-start gap-4">
           <Link href="/">
-            <img src="/logo.jpg" alt="Company Logo" className="h-12 w-auto" />
+            <Image
+              width={300}
+              height={300}
+              src="/logo.jpg"
+              alt="Company Logo"
+              className="h-12 w-auto"
+            />
           </Link>
           <p className="text-sm text-gray-500">
             Empowering your life with smart and secure home automation.

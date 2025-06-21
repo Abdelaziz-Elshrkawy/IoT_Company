@@ -1,26 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
 import { Suspense, useEffect, useState } from "react";
-import {
-  constructProductImagePath,
-  Products,
-  productWhatsAppMessageConstructor,
-} from "@/helpers/products";
+import { constructProductImagePath, Products } from "@/helpers/products";
 import Link from "next/link";
 import { ProductI } from "@/types/types";
 import ProductUrl from "@/components/general/productUrl";
 import LoadingImage from "@/components/general/LoadingImage";
+import Image from "next/image";
 
 export default function ProductPage() {
-  const [animationkey, setAniamtionKey] = useState<string>();
+  const [animationKey, setAnimationKey] = useState<string>();
   useEffect(() => {
-    setAniamtionKey(new Date().toString());
+    setAnimationKey(new Date().toString());
   }, []);
   return (
     <main
-      key={animationkey}
+      key={animationKey}
       className="min-h-screen bg-[#0f1e38] text-black py-16 px-6 md:px-12"
     >
       <h1 className="text-4xl font-bold mb-12 text-center text-white">
@@ -48,7 +44,9 @@ export default function ProductPage() {
                     className="h-full flex justify-center"
                     href={`/products/${category}-${product.urlName}`}
                   >
-                    <img
+                    <Image
+                      width={300}
+                      height={300}
                       src={constructProductImagePath(product.name)}
                       alt={product.name}
                       className=" object-contain rounded-lg mb-4 hover:scale-105 transition-all duration-200"

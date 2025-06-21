@@ -272,14 +272,14 @@ export const Products: CategoriesT = {
     },
   ],
 };
-export const useGetCategory = (categoryName: string) => {
+export const getCategory = (categoryName: string) => {
   return Products[categoryName];
 };
-export const useGetProduct = (
+export const getProduct = (
   productName: string,
   categoryName: string
 ): ProductI => {
-  return useGetCategory(categoryName)?.find(
+  return getCategory(categoryName)?.find(
     (e: ProductI) => e.urlName === productName
   );
 };

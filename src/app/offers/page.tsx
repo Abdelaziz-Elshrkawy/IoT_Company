@@ -1,34 +1,9 @@
 "use client";
 
 import ComingSoon from "@/components/general/ComingSoon";
-import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+// import { motion } from "framer-motion";
+// import { MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
-
-const products = [
-  {
-    id: 1,
-    name: "Smart Light Bulb",
-    description: "Control brightness and color from your phone.",
-    image: "/products/bulb.jpg",
-    whatsappMessage: "I'm interested in the Smart Light Bulb!",
-  },
-  {
-    id: 2,
-    name: "Smart Door Lock",
-    description: "Secure and unlock your door remotely.",
-    image: "/products/lock.jpg",
-    whatsappMessage: "I'd like to know more about the Smart Door Lock!",
-  },
-  {
-    id: 3,
-    name: "Smart Thermostat",
-    description: "Automatically adjusts your home temperature.",
-    image: "/products/thermostat.jpg",
-    whatsappMessage: "Please tell me about the Smart Thermostat!",
-  },
-  // ... more products (copy as needed)
-];
 
 export default function OffersPage() {
   const [animationKey, setAnimationKey] = useState<string>();

@@ -1,3 +1,5 @@
+import React from "react";
+
 export enum ProductCategory {
   IR_DEVICES_CONTROL = "IR DEVICES CONTROL",
   SMART_WIFI_LIGHTING_SWITCHES = "SMART WIFI LIGHTING SWITCHES",
@@ -20,3 +22,13 @@ export interface ProductI {
 export type CategoryT = ProductI[];
 
 export type CategoriesT = { [key: string]: Category };
+
+export interface FeatureI {
+  id: number;
+  title: string;
+  description: string;
+  icon: React.JSX.Element;
+  image: string;
+  bg: string;
+  reverse: boolean;
+}

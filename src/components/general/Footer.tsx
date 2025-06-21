@@ -6,7 +6,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 items-start">
         {/* Logo Section */}
         <div className="flex flex-col items-start gap-4">
-          <img src="/logo.jpg" alt="Company Logo" className="h-12 w-auto" />
+          <Link href="/">
+            <img src="/logo.jpg" alt="Company Logo" className="h-12 w-auto" />
+          </Link>
           <p className="text-sm text-gray-500">
             Empowering your life with smart and secure home automation.
           </p>
@@ -17,10 +19,10 @@ export default function Footer() {
           <h4 className="font-semibold text-lg mb-2">Quick Links</h4>
           {[
             ["Home", "/"],
-            ["About", "/about"],
             ["Products", "/products"],
             ["Offers", "/offers"],
-            ["Contact", "/contact"],
+            ["About", "/about"],
+            // ["Contact", "/contact"],
           ].map(([label, href]) => (
             <Link
               key={label}
@@ -37,28 +39,28 @@ export default function Footer() {
           <h4 className="font-semibold text-lg">Follow Us</h4>
           <div className="flex gap-4">
             <a
-              href="https://facebook.com"
+              href="https://facebook.com/kpekcoumpany"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Facebook className="w-5 h-5 hover:text-blue-500" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://twitter.com/kpekcoumpany"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Twitter className="w-5 h-5 hover:text-sky-500" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/kpekcoumpany"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Instagram className="w-5 h-5 hover:text-pink-500" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/kpek-for-smart-home-solution-company"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -30,7 +30,13 @@ export function NavigationBar() {
   ];
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <div className="flex flex-col fixed w-full">
+    <div className="flex flex-col fixed w-full fixed top-0">
+      {sidebarOpen && (
+        <div
+          className="md:hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-30"
+          onClick={() => setSidebarOpen(false)} // click to close
+        />
+      )}
       {/* Top Navbar - visible only on md+ */}
       <header className="hidden md:flex items-center justify-between px-6 py-4 shadow bg-white">
         <Link href="/" className="flex items-center gap-2">
@@ -68,13 +74,14 @@ export function NavigationBar() {
 
       {/* Sidebar - mobile only */}
       <aside
-        className={`md:hidden fixed top-14 left-0 h-full w-64 bg-white border-r shadow transition-transform duration-300 z-40 ${
+        className={`md:hidden fixed top-14 left-0 h-screen w-[30%] bg-white border-r shadow transition-transform duration-300 z-40 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
+        <div className="absolute top-0 right-0 h-scree w-[70vw] blur-lg"></div>
         <nav className="flex flex-col p-4 gap-4 font-[roboto] font-bold">
           {routes.map((route, i) => (
-            <div className="flex">
+            <div className="flex" key={i}>
               <Link
                 key={i}
                 href={route.path}

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#0a1526] px-6 text-white">
+    <main className="min-h-screen flex items-center sm:mt-20 justify-center bg-[#0a1526] px-6 text-white">
       <div className="max-w-3xl text-center">
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
@@ -21,19 +21,37 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-          className="text-lg mb-6 leading-relaxed text-gray-300"
+          className="text-lg my-6 leading-relaxed text-gray-300"
         >
-          At <span className="text-white font-semibold">KPEK</span>, we bridge
-          the digital and physical worlds by building cutting-edge IoT
-          solutions. Our mission is to simplify connectivity and enable smarter
-          systems — from smart homes to industrial automation.
+          <span className="text-white font-semibold">KPEK</span>, For Smart Home
+          Solutions is your trusted partner in transforming traditional houses
+          into intelligent, secure, and energy-efficient homes. We specialize in
+          cutting-edge smart home systems that provide full control,
+          convenience, and peace of mind — anytime, anywhere. From smart
+          lighting, automated curtains, and voice-controlled appliances, to
+          advanced security features like gas/water leak detection, surveillance
+          systems, and smart door locks — we bring future-ready technology to
+          your doorstep. Whether through voice, mobile apps, or touchless
+          gestures, you’re always in command. We also offer customized smart
+          solutions for businesses, helping improve efficiency, safety, and
+          energy management.
         </motion.p>
 
+        <motion.div
+          className=" mt-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
+          <p className="font-bold text-3xl m-2">Why choose us?</p>
+          <p>✔ Proven expertise with global smart home brands</p>
+          <p>✔ 100% customer satisfaction and ongoing support</p>
+        </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="flex justify-center"
+          className="flex justify-center mt-5"
         >
           <Image
             src="/about_illustration.jpg"

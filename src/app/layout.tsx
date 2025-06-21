@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { NavigationBar } from "@/components/general/NavigationBar";
 import Footer from "@/components/general/Footer";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavigationBar />
-        {children}
+        <NavigationBar key={0} />
+        <Suspense
+          fallback={
+            <div className="absolute top-0 right-0 h-scree w-full blur-lg"></div>
+          }
+        >
+          <div className="mt-10">{children}</div>
+        </Suspense>
         <Footer />
       </body>
     </html>

@@ -31,13 +31,13 @@ const products = [
 ];
 
 export default function OffersPage() {
-  const [animationkey, setAniamtionKey] = useState();
+  const [animationKey, setAnimationKey] = useState<string>();
   useEffect(() => {
-    setAniamtionKey(new Date());
+    setAnimationKey(new Date().toString());
   }, []);
   return (
     <main
-      key={animationkey}
+      key={animationKey}
       className="min-h-screen bg-gray-900 text-black py-16 px-6 md:px-12"
     >
       <h1 className="text-4xl font-bold text-center text-white mb-4">

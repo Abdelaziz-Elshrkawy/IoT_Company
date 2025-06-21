@@ -293,7 +293,7 @@ export function productWhatsAppMessageConstructor(
   const productUrl = `${window.location.origin}/products/${categorySlug}-${urlName}`;
   const message = `Hello, I am interested in buying ${name}.\n\nProduct link: ${productUrl}`;
 
-  return `https://api.whatsapp.com/send/?phone=201121418155&text=${encodeURIComponent(
+  return `https://api.whatsapp.com/send/?phone=201204089577&text=${encodeURIComponent(
     message
   )}&type=phone_number&app_absent=1`;
 }

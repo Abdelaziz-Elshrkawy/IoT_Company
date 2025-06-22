@@ -2,11 +2,21 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { BoxIcon, HomeIcon, Menu, PercentCircle } from "lucide-react";
+import { BoxIcon, HomeIcon, icons, Menu, PercentCircle } from "lucide-react";
 import { useState } from "react";
 import { TbExclamationCircle } from "react-icons/tb";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarProvider,
+} from "@/components/ui/sidebar";
 
 export function NavigationBar() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   const routes = [
     {
       path: "/",
@@ -23,25 +33,26 @@ export function NavigationBar() {
       name: "Offers",
       icon: <PercentCircle className="inline pr-1" />,
     },
-    // {
-    //   path: "/contact",
-    //   name: "ContactUs",
-    // },
+    {
+      path: "/careers",
+      name: "Career",
+    },
     {
       path: "/about",
       name: "About",
       icon: <TbExclamationCircle className="inline pr-1" />,
     },
   ];
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
-    <div className="flex flex-col fixed w-full fixed top-0 z-[100]">
-      {sidebarOpen && (
+    <div className="flex flex-col fixed w-full top-0 z-[100]">
+      {/* Backdrop - must come BEFORE sidebar in DOM */}
+      {/* {sidebarOpen && (
         <div
           className="md:hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-30"
-          onClick={() => setSidebarOpen(false)} // click to close
+          onClick={() => setSidebarOpen(false)}
         />
-      )}
+      )} */}
       {/* Top Navbar - visible only on md+ */}
       <header className="hidden md:flex items-center justify-between px-6 py-4 shadow bg-white">
         <Link href="/" className="flex items-center gap-2">
@@ -54,14 +65,10 @@ export function NavigationBar() {
               {route.name}
             </Link>
           ))}
-          {/*<Link href="/products" className="text-lg">Products</Link>*/}
-          {/*<Link href="/offers" className="text-lg">Offers</Link>*/}
-          {/*<Link href="/about" className="text-lg">About</Link>*/}
-          {/*<Link href="/contact" className="text-lg">Contact</Link>*/}
         </nav>
       </header>
 
-      {/* Mobile Header + Sidebar Toggle Button */}
+      {/* Mobile Header */}
       <header className="md:hidden flex items-center justify-between px-4 py-3 shadow bg-white z-50 relative">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.jpg" width={28} height={28} alt="Logo" />
@@ -77,30 +84,33 @@ export function NavigationBar() {
         </Button>
       </header>
 
-      {/* Sidebar - mobile only */}
-      <aside
-        className={` md:hidde4 fixed top-14 left-0 h-screen w-[40%] bg-white border-r shadow transition-transform duration-300 z-40 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="absolute top-0 right-0 h-scree w-[70vw] blur-lg"></div>
-        <nav className="flex flex-col p-4 gap-4 font-[roboto] font-bold">
-          {routes.map((route, i) => (
-            <div className="flex" key={i}>
-              <Link
-                key={i}
-                href={route.path}
-                onClick={() => setSidebarOpen(false)}
-              >
-                {route.name}
-              </Link>
-            </div>
-          ))}
-        </nav>
-        <div>
-          <Image alt="logo" width={40} height={40} src={"/logo.jpg"} />
-        </div>
-      </aside>
+      {/* Sidebar - must come AFTER backdrop in DOM */}
+      <SidebarProvider>
+        <Sidebar
+          open={sidebarOpen}
+          onOpenChange={setSidebarOpen}
+          className="fixed left-0 h-[calc(100vh-56px)] w-[70%] z-40 bg-white shadow-lg md:hidden"
+        >
+          <SidebarContent className="pt-16">
+            <SidebarMenu>
+              {routes.map((route, i) => (
+                <SidebarMenuItem key={i}>
+                  <SidebarMenuButton asChild>
+                    <Link
+                      href={route.path}
+                      className="flex items-center gap-2 px-4 py-3 text-[#0a1526] font-semibold hover:bg-gray-100 transition-colors"
+                      onClick={() => setSidebarOpen(false)}
+                    >
+                      {route.icon}
+                      {route.name}
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarContent>
+        </Sidebar>
+      </SidebarProvider>
     </div>
   );
 }

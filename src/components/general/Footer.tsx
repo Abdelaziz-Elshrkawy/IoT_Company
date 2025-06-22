@@ -4,7 +4,7 @@ import Link from "next/link";
 import { TbBrandTiktok } from "react-icons/tb";
 export default function Footer() {
   return (
-    <footer className="bg-white text-gray-800 px-8 py-10 border-t">
+    <footer className="h-full bg-white text-gray-800 px-8 py-10 border-t">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 items-start">
         {/* Logo Section */}
         <div className="flex flex-col items-start gap-4">
@@ -17,8 +17,12 @@ export default function Footer() {
               className="h-12 w-auto"
             />
           </Link>
-          <p className="text-sm text-gray-500">
-            Empowering your life with smart and secure home automation.
+          <p className="text-sm text-gray-500 ">
+            Empowering Your Lifestyle Through Smart, Secure Home Automation
+            Enhance the way you live with innovative automation solutions that
+            combine convenience, efficiency, and security. Our technology is
+            designed to simplify everyday tasks, protect what matters most, and
+            give you complete control over your home—anytime, anywhere.
           </p>
         </div>
 

@@ -34,7 +34,7 @@ export function NavigationBar() {
       icon: <PercentCircle className="inline pr-1" />,
     },
     {
-      path: "/careers",
+      path: "/career",
       name: "Career",
     },
     {

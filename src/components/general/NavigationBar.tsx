@@ -30,7 +30,7 @@ export function NavigationBar() {
   ];
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <div className="flex flex-col fixed w-full fixed top-0">
+    <div className="flex flex-col fixed w-full fixed top-0 z-[100]">
       {sidebarOpen && (
         <div
           className="md:hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-30"
@@ -60,7 +60,7 @@ export function NavigationBar() {
       <header className="md:hidden flex items-center justify-between px-4 py-3 shadow bg-white z-50 relative">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.jpg" width={28} height={28} alt="Logo" />
-          <span className="font-semibold text-base">MyApp</span>
+          <span className="font-semibold text-base">KPEK</span>
         </Link>
         <Button
           variant="ghost"

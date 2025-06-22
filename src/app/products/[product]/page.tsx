@@ -16,7 +16,7 @@ export default async function Product({
   const currentProduct = getProduct(productName, categoryName);
 
   return (
-    <div className="h-ful lg:h-[65vh] bg-white dark:bg-black text-black dark:text-white px-6 py-12">
+    <div className="h-ful  bg-white dark:bg-black text-black dark:text-white px-6 py-12">
       <Link href="/products" className="absolute left-0 top-20">
         <ArrowLeftCircleIcon
           size={40}

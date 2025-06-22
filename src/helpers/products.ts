@@ -2,26 +2,6 @@ import { CategoriesT, ProductI } from "@/types/types";
 const productsAssetPath = "/products/";
 
 export const Products: CategoriesT = {
-  "IR DEVICES CONTROL": [
-    {
-      name: "Smart WiFi IR Universal Controller",
-      urlName: "Smart_WiFi_IR_Universal_Controller",
-      description: "for all IR devices",
-      price_LE: 1500,
-      image: productsAssetPath + "Smart WiFi IR Universal Controller.jpg",
-      whatsappMessage:
-        "I'm interested in the Smart WiFi IR Universal Controller! Price: 1500 L.E",
-    },
-    {
-      name: "Smart WiFi IR + RF Universal Controller",
-      urlName: "Smart_WiFi_IR_+_RF_Universal_Controller",
-      description: "for all IR devices",
-      price_LE: 2000,
-      image: productsAssetPath + "Smart WiFi IR+ RF Universal Controller.jpg",
-      whatsappMessage:
-        "I'm interested in the Smart WiFi IR + RF Universal Controller! Price: 2000 L.E",
-    },
-  ],
   "SMART WIFI LIGHTING SWITCHES": [
     {
       name: "1 gang Black or white with frame",
@@ -104,7 +84,27 @@ export const Products: CategoriesT = {
         "I'm interested in the 4 gang Black or white without frame Smart WiFi Lighting Switch! Price: 1900 L.E",
     },
   ],
-  Sensors: [
+  "IR DEVICES CONTROL": [
+    {
+      name: "Smart WiFi IR Universal Controller",
+      urlName: "Smart_WiFi_IR_Universal_Controller",
+      description: "for all IR devices",
+      price_LE: 1500,
+      image: productsAssetPath + "Smart WiFi IR Universal Controller.jpg",
+      whatsappMessage:
+        "I'm interested in the Smart WiFi IR Universal Controller! Price: 1500 L.E",
+    },
+    {
+      name: "Smart WiFi IR + RF Universal Controller",
+      urlName: "Smart_WiFi_IR_+_RF_Universal_Controller",
+      description: "for all IR devices",
+      price_LE: 2000,
+      image: productsAssetPath + "Smart WiFi IR+ RF Universal Controller.jpg",
+      whatsappMessage:
+        "I'm interested in the Smart WiFi IR + RF Universal Controller! Price: 2000 L.E",
+    },
+  ],
+  SENSORS: [
     {
       name: "Motion sensor",
       urlName: "Motion_sensor",
@@ -132,7 +132,7 @@ export const Products: CategoriesT = {
       whatsappMessage: "I'm interested in the Gas sensor! Price: 2450 L.E",
     },
   ],
-  "Safety Products": [
+  "SAFETY PRODUCTS": [
     {
       name: "Circuit breaker",
       urlName: "Circuit_breaker",
@@ -229,7 +229,7 @@ export const Products: CategoriesT = {
         "I'm interested in the Alexa Echo show 5! Price: 8000 L.E",
     },
   ],
-  "Smart door lock": [
+  "SMART DOOR LOCK": [
     {
       name: "Smart door lock for Iron doors",
       urlName: "Smart_door_lock_for_Iron_doors",

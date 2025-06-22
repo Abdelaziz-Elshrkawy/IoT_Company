@@ -2,22 +2,26 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { BoxIcon, HomeIcon, Menu, PercentCircle } from "lucide-react";
 import { useState } from "react";
+import { TbExclamationCircle } from "react-icons/tb";
 
 export function NavigationBar() {
   const routes = [
     {
       path: "/",
       name: "Home",
+      icon: <HomeIcon className="inline pr-1" />,
     },
     {
       path: "/products",
       name: "Products",
+      icon: <BoxIcon className="inline pr-1" />,
     },
     {
       path: "/offers",
       name: "Offers",
+      icon: <PercentCircle className="inline pr-1" />,
     },
     // {
     //   path: "/contact",
@@ -26,6 +30,7 @@ export function NavigationBar() {
     {
       path: "/about",
       name: "About",
+      icon: <TbExclamationCircle className="inline pr-1" />,
     },
   ];
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -74,7 +79,7 @@ export function NavigationBar() {
 
       {/* Sidebar - mobile only */}
       <aside
-        className={`md:hidden fixed top-14 left-0 h-screen w-[30%] bg-white border-r shadow transition-transform duration-300 z-40 ${
+        className={` md:hidde4 fixed top-14 left-0 h-screen w-[40%] bg-white border-r shadow transition-transform duration-300 z-40 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -92,6 +97,9 @@ export function NavigationBar() {
             </div>
           ))}
         </nav>
+        <div>
+          <Image alt="logo" width={40} height={40} src={"/logo.jpg"} />
+        </div>
       </aside>
     </div>
   );

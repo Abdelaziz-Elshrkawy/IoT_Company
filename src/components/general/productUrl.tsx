@@ -20,9 +20,9 @@ export default function ProductUrl({
     const categorySlug = categoryName.split(" ").join("_");
     const productUrl = `${window.location.origin}/products/${categorySlug}-${urlName}`;
     const message = `Hello, I am interested in buying ${productName}.\n\nProduct link: ${productUrl}`;
-    const encodedUrl = `https://api.whatsapp.com/send/?phone=201121418155&text=${encodeURIComponent(
+    const encodedUrl = `https://api.whatsapp.com/send?phone=201105380736&context=AffdY1tMalBIUWOO4c_br67eUEjbukKJG-tFP5xB0pfdXKsn9knFxurCZgWAM8CfFPPyCWxEx0GUvBJBG4XzfktK2XFJTPa1HmIPcUbX2u5Ial3rc24c0iA5hYxM8enAf9MdFIv3AFPkmwtsM3qtu4-bhw&source&app=facebook&text=${encodeURIComponent(
       message
-    )}&type=phone_number&app_absent=1`;
+    )}&type=phone_number&app_absent=0`;
 
     setWhatsappUrl(encodedUrl);
   }, [categoryName, urlName, productName]);

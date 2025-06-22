@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen flex items-center sm:mt-20 justify-center bg-[#0a1526] px-6 text-white">
+    <main className="h-[100%] pb-20 lg:pb-1 lg:min-h-screen flex items-center sm:mt-20 justify-center bg-[#0a1526] px-6 text-white">
       <div className="max-w-3xl text-center">
         <motion.h1
           initial={{ opacity: 0, y: -40 }}

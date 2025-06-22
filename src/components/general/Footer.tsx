@@ -1,6 +1,7 @@
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { TbBrandTiktok } from "react-icons/tb";
 export default function Footer() {
   return (
     <footer className="bg-white text-gray-800 px-8 py-10 border-t">
@@ -46,7 +47,7 @@ export default function Footer() {
           <h4 className="font-semibold text-lg">Follow Us</h4>
           <div className="flex gap-4">
             <a
-              href="https://facebook.com/kpekcoumpany"
+              href="https://www.facebook.com/profile.php?id=61577130665439"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -57,7 +58,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Twitter className="w-5 h-5 hover:text-sky-500" />
+              <TbBrandTiktok className="w-5 h-5 hover:text-red-300 font-bold" />
             </a>
             <a
               href="https://www.instagram.com/kpekcoumpany"

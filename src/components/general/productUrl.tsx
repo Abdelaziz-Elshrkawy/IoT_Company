@@ -1,31 +1,27 @@
 "use client";
 
+import { whatsAppPhoneNumber } from "@/helpers/helpers";
 import { MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function ProductUrl({
-  categoryName,
-  urlName,
-  productName,
+  url,
   className,
 }: {
-  categoryName: string;
-  urlName: string;
-  productName: string;
+  url: string;
   className: string;
 }) {
   const [whatsappUrl, setWhatsappUrl] = useState<string>("");
 
   useEffect(() => {
-    const categorySlug = categoryName.split(" ").join("_");
-    const productUrl = `${window.location.origin}/products/${categorySlug}-${urlName}`;
-    const message = `Hello, I am interested in buying ${productName}.\n\nProduct link: ${productUrl}`;
-    const encodedUrl = `https://api.whatsapp.com/send?phone=201105380736&context=AffdY1tMalBIUWOO4c_br67eUEjbukKJG-tFP5xB0pfdXKsn9knFxurCZgWAM8CfFPPyCWxEx0GUvBJBG4XzfktK2XFJTPa1HmIPcUbX2u5Ial3rc24c0iA5hYxM8enAf9MdFIv3AFPkmwtsM3qtu4-bhw&source&app=facebook&text=${encodeURIComponent(
+    const productUrl = `${window.location.origin}/${url}`;
+    const message = `Hello, I am interested in buying. \n\n ${productUrl}`;
+    const encodedUrl = `https://api.whatsapp.com/send?phone=${whatsAppPhoneNumber}&text=${encodeURIComponent(
       message
-    )}&type=phone_number&app_absent=0`;
+    )}&type=phone_number`;
 
     setWhatsappUrl(encodedUrl);
-  }, [categoryName, urlName, productName]);
+  }, [url]);
 
   return (
     <a

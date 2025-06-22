@@ -25,7 +25,7 @@ export function NavigationBar() {
       icon: <HomeIcon className="inline pr-1" />,
     },
     {
-      path: "/products",
+      path: "/categories",
       name: "Products",
       icon: <BoxIcon className="inline pr-1" />,
     },

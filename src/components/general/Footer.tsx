@@ -55,28 +55,28 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Facebook className="w-5 h-5 hover:text-blue-500" />
+              <Facebook className="w-5 h-5 hover:text-blue-500 transition-all duration-300" />
             </a>
             <a
               href="https://twitter.com/kpekcoumpany"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <TbBrandTiktok className="w-5 h-5 hover:text-red-300 font-bold" />
+              <TbBrandTiktok className="w-5 h-5 hover:text-red-300 font-bold transition-all duration-300" />
             </a>
             <a
               href="https://www.instagram.com/kpekcoumpany"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Instagram className="w-5 h-5 hover:text-pink-500" />
+              <Instagram className="w-5 h-5 hover:text-pink-500 transition-all duration-300" />
             </a>
             <a
               href="https://www.linkedin.com/company/kpek-for-smart-home-solution-company"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin className="w-5 h-5 hover:text-blue-700" />
+              <Linkedin className="w-5 h-5 hover:text-blue-700 transition-all duration-300" />
             </a>
           </div>
         </div>

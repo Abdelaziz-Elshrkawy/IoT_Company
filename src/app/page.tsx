@@ -41,8 +41,9 @@ export default function Home() {
   return (
     <main className="scroll-smooth">
       {/* Hero Section */}
-      <section
+      <motion.section
         // ref={ref}
+        viewport={{ amount: 0.8 }}
         className="h-screen flex flex-col justify-center items-center text-center px-6 gap-6 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/home_image.jpg')" }}
       >
@@ -66,7 +67,7 @@ export default function Home() {
           systems — all managed effortlessly from your smartphone or smart
           device, anytime and anywhere.
         </motion.p>
-      </section>
+      </motion.section>
 
       {/* Features Section */}
       {features.map((feature: FeatureI) => (
@@ -89,8 +90,9 @@ function SnapSection({ feature }: { feature: FeatureI }) {
   // }, [isInView]);
 
   return (
-    <section
+    <motion.section
       // ref={ref}
+      viewport={{ amount: 0.8 }}
       className={`h-screen grid md:grid-cols-2 items-center px-10 gap-12 py-5 text-white ${feature.bg}`}
     >
       {!feature.reverse ? (
@@ -138,6 +140,6 @@ function SnapSection({ feature }: { feature: FeatureI }) {
           </motion.div>
         </>
       )}
-    </section>
+    </motion.section>
   );
 }

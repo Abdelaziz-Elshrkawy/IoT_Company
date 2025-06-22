@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { BoxIcon, HomeIcon, Menu, PercentCircle } from "lucide-react";
 import { useState } from "react";
 import { TbExclamationCircle } from "react-icons/tb";
+import { Briefcase } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -36,6 +37,7 @@ export function NavigationBar() {
     {
       path: "/career",
       name: "Career",
+      icon: <Briefcase className="inline pr-1" />,
     },
     {
       path: "/about",
@@ -87,8 +89,13 @@ export function NavigationBar() {
       {/* Sidebar - must come AFTER backdrop in DOM */}
       <SidebarProvider>
         <Sidebar
-          open={sidebarOpen}
-          onOpenChange={setSidebarOpen}
+          {...({
+            open: sidebarOpen,
+            onOpenChange: setSidebarOpen,
+          } as React.ComponentProps<typeof Sidebar> & {
+            open: boolean;
+            onOpenChange: (open: boolean) => void;
+          })}
           className="fixed left-0 h-[calc(100vh-56px)] w-[70%] z-40 bg-white shadow-lg md:hidden"
         >
           <SidebarContent className="pt-16">

@@ -32,3 +32,10 @@ export interface FeatureI {
   bg: string;
   reverse: boolean;
 }
+
+declare module "@/components/ui/sidebar" {
+  interface SidebarProps {
+    open?: boolean;
+    onOpenChange?: (open: boolean) => void;
+  }
+}

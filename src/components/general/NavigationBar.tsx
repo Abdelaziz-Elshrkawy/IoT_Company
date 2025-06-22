@@ -87,37 +87,44 @@ export function NavigationBar() {
       </header>
 
       {/* Sidebar - must come AFTER backdrop in DOM */}
-      <SidebarProvider>
-        <Sidebar
-          {...({
-            open: sidebarOpen,
-            onOpenChange: setSidebarOpen,
-          } as React.ComponentProps<typeof Sidebar> & {
-            open: boolean;
-            onOpenChange: (open: boolean) => void;
-          })}
-          className="fixed left-0 h-[calc(100vh-56px)] w-[70%] z-40 bg-white shadow-lg md:hidden"
-        >
-          <SidebarContent className="pt-16">
-            <SidebarMenu>
-              {routes.map((route, i) => (
-                <SidebarMenuItem key={i}>
-                  <SidebarMenuButton asChild>
-                    <Link
-                      href={route.path}
-                      className="flex items-center gap-2 px-4 py-3 text-[#0a1526] font-semibold hover:bg-gray-100 transition-colors"
-                      onClick={() => setSidebarOpen(false)}
-                    >
-                      {route.icon}
-                      {route.name}
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarContent>
-        </Sidebar>
-      </SidebarProvider>
+      {sidebarOpen && (
+        <SidebarProvider>
+          <Sidebar
+            {...({
+              open: sidebarOpen,
+              onOpenChange: setSidebarOpen,
+            } as React.ComponentProps<typeof Sidebar> & {
+              open: boolean;
+              onOpenChange: (open: boolean) => void;
+            })}
+            className={`
+      fixed left-0 h-[calc(100vh-56px)] w-[70%] z-40 bg-white shadow-lg
+      transform transition-transform duration-300 ease-in-out
+      ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
+      md:hidden
+    `}
+          >
+            <SidebarContent className="pt-20">
+              <SidebarMenu>
+                {routes.map((route, i) => (
+                  <SidebarMenuItem key={i}>
+                    <SidebarMenuButton asChild>
+                      <Link
+                        href={route.path}
+                        className="flex items-center gap-2 px-4 py-3 text-[#0a1526] font-semibold hover:bg-gray-100 transition-colors"
+                        onClick={() => setSidebarOpen(false)}
+                      >
+                        {route.icon}
+                        {route.name}
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarContent>
+          </Sidebar>
+        </SidebarProvider>
+      )}
     </div>
   );
 }

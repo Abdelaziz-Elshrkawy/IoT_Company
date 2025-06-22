@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { BoxIcon, HomeIcon, icons, Menu, PercentCircle } from "lucide-react";
+import { BoxIcon, HomeIcon, Menu, PercentCircle } from "lucide-react";
 import { useState } from "react";
 import { TbExclamationCircle } from "react-icons/tb";
 import {

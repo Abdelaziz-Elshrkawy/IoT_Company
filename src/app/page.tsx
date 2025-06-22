@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { HomeIcon, ShieldCheck } from "lucide-react";
 import { FeatureI } from "@/types/types";
 

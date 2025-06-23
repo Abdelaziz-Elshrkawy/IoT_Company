@@ -14,33 +14,34 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from "@/components/ui/sidebar";
+import { Routes } from "@/types/enums";
 
 export function NavigationBar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const routes = [
     {
-      path: "/",
+      path: Routes.Home,
       name: "Home",
       icon: <HomeIcon className="inline pr-1" />,
     },
     {
-      path: "/categories",
+      path: Routes.Products,
       name: "Products",
       icon: <BoxIcon className="inline pr-1" />,
     },
     {
-      path: "/offers",
+      path: Routes.Offers,
       name: "Offers",
       icon: <PercentCircle className="inline pr-1" />,
     },
     {
-      path: "/career",
+      path: Routes.Career,
       name: "Career",
       icon: <Briefcase className="inline pr-1" />,
     },
     {
-      path: "/about",
+      path: Routes.About,
       name: "About",
       icon: <TbExclamationCircle className="inline pr-1" />,
     },

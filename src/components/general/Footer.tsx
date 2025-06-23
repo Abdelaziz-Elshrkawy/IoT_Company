@@ -1,3 +1,4 @@
+import { Routes } from "@/types/enums";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,10 +31,10 @@ export default function Footer() {
         <div className="flex flex-col gap-2">
           <h4 className="font-semibold text-lg mb-2">Quick Links</h4>
           {[
-            ["Home", "/"],
-            ["Products", "/products"],
-            ["Offers", "/offers"],
-            ["About", "/about"],
+            ["Home", Routes.Home],
+            ["Products", Routes.Products],
+            ["Offers", Routes.Offers],
+            ["About", Routes.About],
             // ["Contact", "/contact"],
           ].map(([label, href]) => (
             <Link

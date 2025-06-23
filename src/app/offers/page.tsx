@@ -6,6 +6,7 @@ import {
   offers,
   Products,
 } from "@/helpers/products";
+import { Routes } from "@/types/enums";
 import { ProductI } from "@/types/types";
 import { motion } from "framer-motion";
 import { MessageCircle, Lightbulb, Bed, Home, ShieldCheck } from "lucide-react";
@@ -96,7 +97,7 @@ export default function OffersPage() {
                           <td className="py-1 pr-4">
                             {urlName ? (
                               <Link
-                                href={`/categories${urlName}-offers`}
+                                href={`${Routes.Products}${urlName}-offers`}
                                 className="text-blue-600 underline hover:text-blue-800"
                                 onMouseEnter={() => setHoveredImage(imagePath)}
                                 onMouseMove={(e) =>

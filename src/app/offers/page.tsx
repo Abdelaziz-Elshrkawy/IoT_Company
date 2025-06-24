@@ -3,34 +3,28 @@
 import {
   constructOffersImagePath,
   whatsAppPhoneNumber,
-  constructProductImagePath,
   offers,
-  Products,
 } from "@/helpers/helpers";
-import { Routes } from "@/types/enums";
-import { ProductI } from "@/types/types";
 import { motion } from "framer-motion";
 import { MessageCircle, Lightbulb, Bed, Home, ShieldCheck } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
 
-const getProductRouteInfo = (name: string): string | undefined => {
-  for (const [categoryName, products] of Object.entries(Products)) {
-    const match = products.find((p: ProductI) => p.name === name);
-    if (match) {
-      return `/${categoryName}/${categoryName}-${match.urlName}`;
-    }
-  }
-  return undefined;
-};
+// const getProductRouteInfo = (name: string): string | undefined => {
+//   for (const [categoryName, products] of Object.entries(Products)) {
+//     const match = products.find((p: ProductI) => p.name === name);
+//     if (match) {
+//       return `/${categoryName}/${categoryName}-${match.urlName}`;
+//     }
+//   }
+//   return undefined;
+// };
 
 export default function OffersPage() {
-  const [hoveredImage, setHoveredImage] = useState<string | null>(null);
-  const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({
-    x: 0,
-    y: 0,
-  });
+  // const [hoveredImage, setHoveredImage] = useState<string | null>(null);
+  // const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({
+  //   x: 0,
+  //   y: 0,
+  // });
 
   return (
     <>
@@ -151,7 +145,7 @@ export default function OffersPage() {
         </div>
       </main>
 
-      {hoveredImage && (
+      {/* {hoveredImage && (
         <div
           className="hidden lg:block pointer-events-none fixed z-50"
           style={{
@@ -167,7 +161,7 @@ export default function OffersPage() {
             className="w-40 h-40 object-contain border border-gray-300 rounded-md shadow-lg bg-white"
           />
         </div>
-      )}
+      )} */}
     </>
   );
 }

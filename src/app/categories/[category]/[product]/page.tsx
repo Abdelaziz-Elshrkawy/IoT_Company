@@ -1,4 +1,4 @@
-import { constructProductImagePath, getProduct } from "@/helpers/products";
+import { constructProductImagePath, getProduct } from "@/helpers/helpers";
 import ProductUrl from "../../../../components/general/productUrl";
 import Image from "next/image";
 import Back from "@/components/general/Back";
@@ -16,7 +16,7 @@ export default async function Product({
   const currentProduct = getProduct(productName, categoryName);
 
   return (
-    <div className="min-h-[63vh] bg-white dark:bg-black text-black dark:text-white px-6 py-12 relative">
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white px-6 py-12 relative">
       {/* Back Button */}
       <Back
         route={isOffer ? "/offers" : `/categories/${categoryName}`}

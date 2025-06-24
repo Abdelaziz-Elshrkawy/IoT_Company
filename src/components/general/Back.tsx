@@ -15,7 +15,7 @@ function Back({
     <>
       <Link
         href={route}
-        className={`group md:mt-4 lg:mt-1 text-${
+        className={`group md:mt-6 lg:mt-3 text-${
           color || "black"
         } inline-flex items-center gap-2 absolute left-6 top-6 lg:top-10 text-gray-800hover:text-blue-600 dark:hover:text-cyan-400 transition-all hover:underline underline-offset-1`}
       >

@@ -2,7 +2,7 @@
 import Back from "@/components/general/Back";
 import LoadingImage from "@/components/general/LoadingImage";
 import ProductUrl from "@/components/general/productUrl";
-import { constructProductImagePath, Products } from "@/helpers/products";
+import { constructProductImagePath, Products } from "@/helpers/helpers";
 import { ProductI } from "@/types/types";
 import { motion } from "framer-motion";
 import Image from "next/image";

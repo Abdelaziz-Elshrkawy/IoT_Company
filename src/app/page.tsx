@@ -34,12 +34,12 @@ export default function Home() {
       icon: <ShieldCheck className="w-16 h-16 text-green-400 mb-4" />,
       image: "/home_security.jpg",
       bg: "bg-[#132033]",
-      reverse: true,
+      reverse: false,
     },
   ];
 
   return (
-    <main className="scroll-smooth">
+    <main className="scroll-smooth overflow-x-hidden">
       {/* Hero Section */}
       <motion.section
         // ref={ref}

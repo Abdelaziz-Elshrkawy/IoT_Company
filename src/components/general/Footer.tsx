@@ -3,6 +3,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { TbBrandTiktok } from "react-icons/tb";
+import { routes } from "./RoutesHelper";
 export default function Footer() {
   return (
     <footer className="h-full bg-white text-gray-800 px-8 py-10 border-t">
@@ -30,19 +31,13 @@ export default function Footer() {
         {/* Navigation Links */}
         <div className="flex flex-col gap-2">
           <h4 className="font-semibold text-lg mb-2">Quick Links</h4>
-          {[
-            ["Home", Routes.Home],
-            ["Products", Routes.Products],
-            ["Offers", Routes.Offers],
-            ["About", Routes.About],
-            // ["Contact", "/contact"],
-          ].map(([label, href]) => (
+          {routes.map(({ name, path }) => (
             <Link
-              key={label}
-              href={href}
+              key={name}
+              href={path}
               className="text-sm text-gray-600 hover:text-blue-600 transition"
             >
-              {label}
+              {name}
             </Link>
           ))}
         </div>

@@ -2,51 +2,25 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { BoxIcon, HomeIcon, Menu, PercentCircle } from "lucide-react";
-import { useState } from "react";
-import { TbExclamationCircle } from "react-icons/tb";
-import { Briefcase } from "lucide-react";
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarProvider,
-} from "@/components/ui/sidebar";
-import { Routes } from "@/types/enums";
+import { Menu } from "lucide-react";
+import { useEffect, useState } from "react";
+import { routes } from "./RoutesHelper";
 
 export function NavigationBar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const routes = [
-    {
-      path: Routes.Home,
-      name: "Home",
-      icon: <HomeIcon className="inline pr-1" />,
-    },
-    {
-      path: Routes.Products,
-      name: "Products",
-      icon: <BoxIcon className="inline pr-1" />,
-    },
-    {
-      path: Routes.Offers,
-      name: "Offers",
-      icon: <PercentCircle className="inline pr-1" />,
-    },
-    {
-      path: Routes.Career,
-      name: "Career",
-      icon: <Briefcase className="inline pr-1" />,
-    },
-    {
-      path: Routes.About,
-      name: "About",
-      icon: <TbExclamationCircle className="inline pr-1" />,
-    },
-  ];
+  useEffect(() => {
+    if (sidebarOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [sidebarOpen]);
   return (
     <div className="flex flex-col fixed w-full top-0 z-[100]">
       {/* Backdrop - must come BEFORE sidebar in DOM */}
@@ -72,7 +46,7 @@ export function NavigationBar() {
       </header>
 
       {/* Mobile Header */}
-      <header className="md:hidden flex items-center justify-between px-4 py-3 shadow bg-white z-50 relative">
+      <header className="md:hidden flex items-center justify-between px-4 py-3 z-50 shadow bg-white relative">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.jpg" width={28} height={28} alt="Logo" />
           <span className="font-semibold text-base">KPEK</span>
@@ -83,49 +57,38 @@ export function NavigationBar() {
           className="text-gray-900"
           onClick={() => setSidebarOpen(!sidebarOpen)}
         >
-          <Menu className="h-6 w-6" />
+          <Menu className="h-6 w-6 mr" />
         </Button>
       </header>
 
       {/* Sidebar - must come AFTER backdrop in DOM */}
       {sidebarOpen && (
-        <SidebarProvider>
-          <Sidebar
-            {...({
-              open: sidebarOpen,
-              onOpenChange: setSidebarOpen,
-            } as React.ComponentProps<typeof Sidebar> & {
-              open: boolean;
-              onOpenChange: (open: boolean) => void;
-            })}
-            className={`
-      fixed left-0 h-[calc(100vh-56px)] w-[70%] z-40 bg-white shadow-lg
-      transform transition-transform duration-300 ease-in-out
-      ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
-      md:hidden
-    `}
-          >
-            <SidebarContent className="pt-20">
-              <SidebarMenu>
-                {routes.map((route, i) => (
-                  <SidebarMenuItem key={i}>
-                    <SidebarMenuButton asChild>
-                      <Link
-                        href={route.path}
-                        className="flex items-center gap-2 px-4 py-3 text-[#0a1526] font-semibold hover:bg-gray-100 transition-colors"
-                        onClick={() => setSidebarOpen(false)}
-                      >
-                        {route.icon}
-                        {route.name}
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarContent>
-          </Sidebar>
-        </SidebarProvider>
+        <div
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30"
+          onClick={() => setSidebarOpen(false)}
+        />
       )}
+
+      {/* Custom Sidebar */}
+      <div
+        className={`fixed top-14 right-0 h-screen w-[50%] z-40 bg-white shadow-lg transition-transform duration-300 ease-in-out md:hidden ${
+          sidebarOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <nav className="flex flex-col p-6 space-y-5">
+          {routes.map((route, i) => (
+            <Link
+              key={i}
+              href={route.path}
+              className="flex items-center gap-2 text-gray-800 font-medium hover:text-blue-600"
+              onClick={() => setSidebarOpen(false)}
+            >
+              {route.icon}
+              {route.name}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </div>
   );
 }

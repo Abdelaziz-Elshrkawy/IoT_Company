@@ -1,11 +1,12 @@
 "use client";
 
-import { whatsAppPhoneNumber } from "@/helpers/helpers";
 import {
+  constructOffersImagePath,
+  whatsAppPhoneNumber,
   constructProductImagePath,
   offers,
   Products,
-} from "@/helpers/products";
+} from "@/helpers/helpers";
 import { Routes } from "@/types/enums";
 import { ProductI } from "@/types/types";
 import { motion } from "framer-motion";
@@ -16,7 +17,7 @@ import { useState } from "react";
 
 const getProductRouteInfo = (name: string): string | undefined => {
   for (const [categoryName, products] of Object.entries(Products)) {
-    const match = products.find((p: ProductI) => p.name === name) as ProductI;
+    const match = products.find((p: ProductI) => p.name === name);
     if (match) {
       return `/${categoryName}/${categoryName}-${match.urlName}`;
     }
@@ -33,13 +34,14 @@ export default function OffersPage() {
 
   return (
     <>
-      <main
-        key={"offers"}
-        className="min-h-screen bg-gray-900 text-black py-16 px-6 md:px-12"
-      >
-        <h1 className="text-4xl font-bold text-center text-white mb-10">
-          Our Offers
-        </h1>
+      <main className="min-h-screen bg-gradient-to-br from-slate-800 to-gray-900 text-white py-16 px-6 md:px-12">
+        <section className="text-center mb-12">
+          <h1 className="text-5xl font-extrabold mb-4">Limited Time Offers</h1>
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            Explore our exclusive smart home packages — premium features,
+            unbeatable prices.
+          </p>
+        </section>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {offers.map((offer, index) => {
@@ -68,24 +70,32 @@ export default function OffersPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white shadow-lg rounded-xl p-6 flex flex-col justify-between relative"
+                className="bg-white text-gray-800 shadow-2xl rounded-2xl p-6 flex flex-col justify-between transition-transform hover:-translate-y-1 hover:shadow-3xl relative group"
               >
-                <div className="absolute -top-3 -right-3 bg-gradient-to-r from-pink-500 to-red-500 text-white px-3 py-1 text-xs rounded-full shadow-md font-bold">
+                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-red-600 to-pink-500 text-white px-3 py-1 text-xs rounded-full shadow-md font-bold">
                   10% OFF
                 </div>
 
                 <div className="flex items-center gap-2 mb-4">
                   {renderIcon()}
-                  <h2 className="text-2xl font-bold text-black">
-                    {offer.name}
-                  </h2>
+                  <h2 className="text-2xl font-bold">{offer.name}</h2>
                 </div>
 
-                <table className="w-full text-sm mb-4">
-                  <thead>
-                    <tr className="text-left text-gray-500 border-b">
-                      <th className="pb-1">Product</th>
-                      <th className="pb-1">Qty</th>
+                <div className="relative mb-6 flex justify-center">
+                  <Image
+                    src={constructOffersImagePath(offer.name)}
+                    alt={offer.name}
+                    width={400}
+                    height={400}
+                    className="rounded-lg object-contain border border-gray-200"
+                  />
+                </div>
+
+                <table className="w-full text-sm text-gray-700 mb-4 border border-gray-200 rounded overflow-hidden">
+                  <thead className="bg-gray-100">
+                    <tr>
+                      <th className="py-2 px-3 text-left">Product</th>
+                      <th className="py-2 px-3 text-left">Qty</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -93,15 +103,21 @@ export default function OffersPage() {
                       const urlName = getProductRouteInfo(item.name);
                       const imagePath = constructProductImagePath(item.name);
                       return (
-                        <tr key={i}>
-                          <td className="py-1 pr-4">
+                        <tr
+                          key={i}
+                          className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                        >
+                          <td className="py-2 px-3">
                             {urlName ? (
                               <Link
                                 href={`${Routes.Products}${urlName}-offers`}
                                 className="text-blue-600 underline hover:text-blue-800"
                                 onMouseEnter={() => setHoveredImage(imagePath)}
                                 onMouseMove={(e) =>
-                                  setCursorPos({ x: e.clientX, y: e.clientY })
+                                  setCursorPos({
+                                    x: e.clientX,
+                                    y: e.clientY,
+                                  })
                                 }
                                 onMouseLeave={() => setHoveredImage(null)}
                               >
@@ -111,19 +127,20 @@ export default function OffersPage() {
                               item.name
                             )}
                           </td>
-                          <td className="py-1">{item.quantity}</td>
+                          <td className="py-2 px-3">{item.quantity}</td>
                         </tr>
                       );
                     })}
                   </tbody>
                 </table>
+
                 <a
                   href={`https://api.whatsapp.com/send?phone=${whatsAppPhoneNumber}&text=${encodeURIComponent(
                     whatsappMessage
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 text-sm w-full rounded"
+                  className="mt-auto bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-center text-sm inline-flex items-center justify-center transition-all"
                 >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   Order on WhatsApp

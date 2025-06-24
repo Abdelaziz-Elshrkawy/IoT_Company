@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { JSX } from "react";
 
-import { Products } from "@/helpers/products";
+import { Products } from "@/helpers/helpers";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -26,7 +26,7 @@ export default function ProductsCategoriesPage() {
     "SMART DOOR LOCK": <LockIcon className="w-6 h-6" />,
   };
   return (
-    <main className="min-h-screen bg-gray-900  text-white py-12 px-6 md:px-12">
+    <main className="min-h-screen w-full bg-gray-900  text-white py-12 px-6 md:px-12">
       <h1 className="text-4xl font-bold text-center mb-12">
         Product Categories
       </h1>
@@ -43,7 +43,7 @@ export default function ProductsCategoriesPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-md transition"
+              className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-md transition duration-500"
             >
               <Link
                 href={`/categories/${category}`}

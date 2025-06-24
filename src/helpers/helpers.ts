@@ -303,16 +303,16 @@ export const offers = [
       { quantity: 2, name: "Smart WiFi IR Universal Controller" },
     ],
   },
-  {
-    id: 4,
-    name: "Home 1",
-    items: [
-      { quantity: 8, name: "2 gang black or white without frame" },
-      { quantity: 2, name: "Smart WiFi IR Universal Controller" },
-      { quantity: 1, name: "Alexa Echo dot 3" },
-      { quantity: 1, name: "Smart door lock for wooden or Armored doors" },
-    ],
-  },
+  // {
+  //   id: 4,
+  //   name: "Home 1",
+  //   items: [
+  //     { quantity: 8, name: "2 gang black or white without frame" },
+  //     { quantity: 2, name: "Smart WiFi IR Universal Controller" },
+  //     { quantity: 1, name: "Alexa Echo dot 3" },
+  //     { quantity: 1, name: "Smart door lock for wooden or Armored doors" },
+  //   ],
+  // },
   {
     id: 5,
     name: "Home 2",
@@ -323,14 +323,14 @@ export const offers = [
       { quantity: 1, name: "Smart door lock for wooden or Armored doors" },
     ],
   },
-  {
-    id: 6,
-    name: "Safety",
-    items: [
-      { quantity: 1, name: "Gas sensor" },
-      { quantity: 1, name: "Water sensor" },
-      { quantity: 1, name: "(Gas & water) valve" },
-      { quantity: 1, name: "Tuya camera" },
-    ],
-  },
+  // {
+  //   id: 6,
+  //   name: "Safety",
+  //   items: [
+  //     { quantity: 1, name: "Gas sensor" },
+  //     { quantity: 1, name: "Water sensor" },
+  //     { quantity: 1, name: "(Gas & water) valve" },
+  //     { quantity: 1, name: "Tuya camera" },
+  //   ],
+  // },
 ];

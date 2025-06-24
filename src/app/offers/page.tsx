@@ -91,7 +91,7 @@ export default function OffersPage() {
                   />
                 </div>
 
-                <table className="w-full text-sm text-gray-700 mb-4 border border-gray-200 rounded overflow-hidden">
+                {/* <table className="w-full text-sm text-gray-700 mb-4 border border-gray-200 rounded overflow-hidden">
                   <thead className="bg-gray-100">
                     <tr>
                       <th className="py-2 px-3 text-left">Product</th>
@@ -132,7 +132,7 @@ export default function OffersPage() {
                       );
                     })}
                   </tbody>
-                </table>
+                </table> */}
 
                 <a
                   href={`https://api.whatsapp.com/send?phone=${whatsAppPhoneNumber}&text=${encodeURIComponent(

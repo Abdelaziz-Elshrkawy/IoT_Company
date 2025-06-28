@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
       >
         <NavigationBar key={0} />
         <Suspense
@@ -38,7 +38,7 @@ export default function RootLayout({
             <div className="absolute top-0 right-0 h-scree w-full blur-lg"></div>
           }
         >
-          <div className="mt-10">{children}</div>
+          <div className="mt-14 md:mt-16">{children}</div>
         </Suspense>
         <Footer />
         <Toaster richColors position="top-center" />

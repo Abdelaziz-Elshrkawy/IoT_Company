@@ -16,7 +16,7 @@ export default async function Product({
   const currentProduct = getProduct(productName, categoryName);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white px-6 py-12 relative">
+    <div className="min-h-screen bg-white bg-gray-900 dark:bg-black text-black dark:text-white px-6 py-12 relative">
       {/* Back Button */}
       <Back
         route={isOffer ? "/offers" : `/categories/${categoryName}`}

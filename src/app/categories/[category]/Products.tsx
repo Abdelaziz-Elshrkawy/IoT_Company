@@ -15,7 +15,7 @@ export default function ProductsPage({ category }: { category: string }) {
   return (
     <main
       key={new Date().toString()}
-      className="min-h-screen bg-[#0f1e38] text-black py-16 px-6 md:px-12 relative"
+      className="min-h-screen bg-gray-900 text-black py-16 px-6 md:px-12 relative"
     >
       <Back color="white" route="/categories" text="Categories" />
       <div key={currentCategory} className="mb-16 mt-10">

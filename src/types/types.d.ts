@@ -1,5 +1,12 @@
 import React from "react";
 
+declare module "@/components/ui/sidebar" {
+  interface SidebarProps {
+    open?: boolean;
+    onOpenChange?: (open: boolean) => void;
+  }
+}
+
 export enum ProductCategory {
   IR_DEVICES_CONTROL = "IR DEVICES CONTROL",
   SMART_WIFI_LIGHTING_SWITCHES = "SMART WIFI LIGHTING SWITCHES",
@@ -33,9 +40,14 @@ export interface FeatureI {
   reverse: boolean;
 }
 
-declare module "@/components/ui/sidebar" {
-  interface SidebarProps {
-    open?: boolean;
-    onOpenChange?: (open: boolean) => void;
-  }
+export interface PositionI {
+  name: string,
+  description: PositionDescriptionI
+}
+
+export interface PositionDescriptionI {
+  jobDescription: string,
+  requirements: string,
+  keyResponsibilities: string
+  preferred: string
 }

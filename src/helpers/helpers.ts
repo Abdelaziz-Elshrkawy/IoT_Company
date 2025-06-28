@@ -1,5 +1,5 @@
 export const whatsAppPhoneNumber = "201105380736";
-import { CategoriesT, ProductI } from "@/types/types";
+import {CategoriesT, PositionI, ProductI} from "@/types/types";
 const productsAssetPath = "/products/";
 
 export const Products: CategoriesT = {
@@ -334,3 +334,240 @@ export const offers = [
   //   ],
   // },
 ];
+
+
+
+export const Positions: PositionI[] = [
+  {
+    name: "Graphic Designer",
+    description: {
+      jobDescription: `We are seeking a talented and creative Graphic Designer to join our fast-growing Smart Home Solutions company.
+The ideal candidate will have a strong design portfolio and a passion for creating compelling visuals that communicate our brand across digital and print platforms.
+You will play a key role in developing marketing assets, product packaging, user interface elements, and company branding.`,
+
+      keyResponsibilities: `Design engaging visual content for social media, websites, presentations, brochures, and advertisements.
+
+Collaborate with the marketing and product teams to conceptualize and execute creative campaigns.
+
+Maintain consistent brand identity across all platforms and materials.
+
+Create illustrations, icons, and infographics that enhance user understanding and experience.
+
+Prepare and deliver production-ready files for both digital and print media.
+
+Stay updated on industry trends, design techniques, and emerging tools.
+
+Work with printers and vendors to ensure high-quality output and timely delivery of materials.`,
+
+      requirements: `Bachelor’s degree in Graphic Design, Visual Arts, or a related field.
+
+2+ years of experience as a graphic designer or in a similar role.
+
+Proficiency in Adobe Creative Suite (Photoshop, Illustrator, InDesign, etc.).
+
+Strong portfolio showcasing creative design work across multiple platforms.
+
+Understanding of layout, typography, and color theory.
+
+Excellent attention to detail and time management skills.
+
+Strong communication skills and ability to take constructive feedback.
+
+Basic knowledge of UX/UI principles is a plus.`,
+
+      preferred: `Experience in smart home or tech industry branding.
+
+Familiarity with basic motion design or animation tools.`
+    }
+  },
+
+  {
+    name: "Motion Graphic",
+    description: {
+      jobDescription: `We are looking for a dynamic and skilled Motion Graphics Designer to bring our brand and products to life through compelling animations and video content.
+You will create animated videos, explainer clips, product showcases, and social media animations that help communicate complex concepts in an engaging visual format.`,
+
+      keyResponsibilities: `Develop high-quality motion graphics and animations for promotional videos, tutorials, digital ads, and social media content.
+
+Collaborate with the marketing, UI/UX, and engineering teams to visualize smart home technologies and features.
+
+Edit raw footage and add effects/elements to enhance motion visuals.
+
+Design assets (icons, illustrations, lower-thirds) and animate them to support storytelling.
+
+Ensure all video and animation projects align with brand guidelines and messaging.
+
+Stay current with motion design trends, techniques, and software updates.`,
+
+      requirements: `Bachelor’s degree in Motion Design, Multimedia Arts, Animation, or related field.
+
+2+ years of experience in motion graphics and video editing.
+
+Proficiency in Adobe After Effects, Premiere Pro, Illustrator, and Photoshop.
+
+Strong portfolio demonstrating creative motion graphics work.
+
+Understanding of animation principles and storytelling techniques.
+
+Attention to detail, creative thinking, and visual storytelling abilities.
+
+Ability to manage multiple projects and meet tight deadlines.`,
+
+      preferred: `Experience with 3D software (Cinema 4D, Blender, etc.) is a plus.
+
+Background in creating content for tech or smart home solutions.
+
+Knowledge of sound design and audio editing tools.`
+    }
+  },
+
+  {
+    name: "Embedded system and IOT Engineer",
+    description: {
+      jobDescription: `We are seeking a passionate and skilled Embedded Systems Engineer to join our fast-growing Smart Home Solutions company.
+The ideal candidate will have strong experience in embedded firmware development and a deep interest in building IoT-based smart home devices.
+You will play a key role in designing, programming, and testing connected products that bring automation, security, and convenience to modern living.`,
+
+      keyResponsibilities: `Design, develop, and debug firmware for smart home devices including sensors, switches, locks, lighting controllers, and automation hubs.
+      
+Integrate communication protocols such as Zigbee, Z-Wave, Wi-Fi, BLE, and MQTT for device-to-device and cloud communication.
+
+Collaborate with hardware, mobile app, and cloud teams to ensure seamless product integration across platforms.
+
+Optimize power usage and performance for embedded devices in real-world smart home environments.
+
+Develop and maintain embedded software for microcontrollers (ARM Cortex-M, ESP32, STM32, etc.).
+
+Conduct hardware bring-up, system debugging, and performance validation.
+
+Document code, system architecture, and design specifications clearly and accurately.
+
+Stay updated on the latest trends and standards in smart home technologies and IoT ecosystems.
+`,
+
+      requirements: `Bachelor’s degree in Electronics, Computer Engineering, Mechatronics, or a related field.
+      
+2+ years of experience in embedded systems development, preferably in IoT or home automation.
+
+Proficiency in C/C++ for microcontroller development.
+
+Experience with communication protocols (UART, I2C, SPI, CAN, MQTT, HTTP).
+
+Familiarity with smart home platforms like Tuya, KNX, Home Assistant, or Matter is a strong advantage.
+
+Ability to read and interpret circuit schematics, datasheets, and hardware documentation.
+
+Experience using debugging tools like oscilloscopes, logic analyzers, and serial monitors.
+
+Strong problem-solving, documentation, and teamwork skills.`,
+
+      preferred: `Experience with real-time operating systems (FreeRTOS, Zephyr, etc.).
+
+Knowledge of IoT cloud platforms (AWS IoT, Blynk, Firebase, etc.).
+
+Background in low-power embedded design and OTA firmware updates.
+
+Familiarity with mobile app integration and smart home ecosystems (Google Home, Alexa, Apple HomeKit).`
+    }
+  },
+  {
+    name: "Electrical Technician",
+    description: {
+      jobDescription: `We are seeking a skilled and detail-oriented Electrical Technician to join our team at a fast-growing Smart Home Solutions company.
+
+The successful candidate will be responsible for installing, maintaining, and troubleshooting electrical systems and smart home devices including lighting systems, automation controls, security systems, and sensors.
+
+This role requires a proactive technician with hands-on experience in electrical wiring and low-voltage systems, and a strong understanding of smart technologies used in residential and commercial settings.`,
+
+      keyResponsibilities: `Install, configure, and test smart home systems including lighting control, HVAC integration, smart switches, sensors, security systems, and automation hubs.
+
+Perform electrical wiring and connections based on schematics and electrical drawings.
+
+Conduct diagnostics and repair of smart devices and system components.
+
+Coordinate with engineers and project managers to ensure system compatibility and seamless integration.
+
+Ensure compliance with national and local electrical codes and company safety standards.
+
+Provide technical support during system commissioning and client handover.
+
+Maintain accurate records of installations, repairs, and inspections.
+
+Train clients on proper system usage and basic troubleshooting.`,
+
+      requirements: `Diploma or Technical Degree in Electrical Engineering, Mechatronics, Electronics, or a related field.
+
+Proven experience (2+ years) as an Electrical Technician, preferably in automation or smart home installations.
+
+Solid understanding of electrical systems, low-voltage circuits, and control wiring.
+
+Familiarity with smart home platforms (e.g., Tuya, Zigbee, Z-Wave, KNX, Google Home, Alexa, etc.) is a strong plus.
+
+Ability to read and interpret technical drawings and wiring schematics.
+
+Proficiency in using hand tools, measurement instruments, and testing devices.
+
+Strong problem-solving skills and attention to detail.
+
+Good communication and customer service skills.
+
+Ability to work both independently and as part of a team.
+
+Valid driver’s license and willingness to travel to job sites as needed.`,
+
+      preferred: `Certification in smart home systems or low-voltage installations.
+
+Experience with networking and IoT device integration.`
+    }
+  },
+  {
+    name: "Web Developer",
+    description: {
+      jobDescription: `We are seeking a passionate and skilled Full Stack Web Developer to join our fast-growing Smart Home Solutions company.
+
+The ideal candidate will have strong experience in building scalable web applications and a keen interest in developing platforms that connect users with smart home devices.
+
+You will play a key role in designing, implementing, and optimizing interactive dashboards, APIs, and real-time interfaces that empower users to control and monitor their smart homes.`,
+
+      keyResponsibilities: `Design and develop modern, responsive web applications for smart home control and device management.
+
+Implement backend services and RESTful APIs that interact with IoT devices and cloud platforms.
+
+Collaborate with embedded, mobile, and cloud teams to ensure smooth data exchange and system integration.
+
+Build real-time dashboards using MQTT/WebSockets for device monitoring and status updates.
+
+Ensure application security, scalability, and performance in cloud-connected environments.
+
+Maintain clean, well-documented, and reusable code across frontend and backend components.
+
+Participate in code reviews, feature planning, and UX discussions to improve product quality.
+
+Stay updated on new technologies, frameworks, and best practices in web and IoT development.`,
+
+      requirements: `Bachelor’s degree in Computer Science, Software Engineering, or a related field.
+
+2+ years of experience in full stack web development.
+
+Proficiency in JavaScript, HTML, CSS, and frontend frameworks such as React.js, Vue.js, or Angular.
+
+Experience in backend development using Node.js, Express, Django, or similar frameworks.
+
+Knowledge of RESTful API design, WebSockets, and integration with IoT platforms or protocols like MQTT.
+
+Familiarity with databases such as MongoDB, MySQL, or Firebase.
+
+Solid understanding of authentication, authorization, and data security in web environments.
+
+Strong problem-solving skills and ability to work independently and collaboratively.`,
+
+      preferred: `Experience building dashboards or control panels for IoT or smart devices.
+
+Familiarity with smart home platforms (Tuya, Home Assistant, Google Home, Alexa, etc.).
+
+Understanding of cloud services (AWS, Firebase, Azure) and serverless architectures.
+
+Basic understanding of embedded systems or how web apps interact with hardware.`
+    }
+  }
+]

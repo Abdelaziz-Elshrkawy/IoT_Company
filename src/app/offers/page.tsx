@@ -4,7 +4,9 @@ import {
   constructOffersImagePath,
   whatsAppPhoneNumber,
   offers,
+  // Products,
 } from "@/helpers/helpers";
+// import { ProductI } from "@/types/types";
 import { motion } from "framer-motion";
 import { MessageCircle, Lightbulb, Bed, Home, ShieldCheck } from "lucide-react";
 import Image from "next/image";
@@ -28,7 +30,7 @@ export default function OffersPage() {
 
   return (
     <>
-      <main className="min-h-screen bg-gradient-to-br from-slate-800 to-gray-900 text-white py-16 px-6 md:px-12">
+      <main className="min-h-screen to-gray-900 text-white py-16 px-6 md:px-12">
         <section className="text-center mb-12">
           <h1 className="text-5xl font-extrabold mb-4">Limited Time Offers</h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
@@ -95,7 +97,7 @@ export default function OffersPage() {
                   <tbody>
                     {offer.items.map((item, i) => {
                       const urlName = getProductRouteInfo(item.name);
-                      const imagePath = constructProductImagePath(item.name);
+                      // const imagePath = constructProductImagePath(item.name);
                       return (
                         <tr
                           key={i}
@@ -106,14 +108,14 @@ export default function OffersPage() {
                               <Link
                                 href={`${Routes.Products}${urlName}-offers`}
                                 className="text-blue-600 underline hover:text-blue-800"
-                                onMouseEnter={() => setHoveredImage(imagePath)}
-                                onMouseMove={(e) =>
-                                  setCursorPos({
-                                    x: e.clientX,
-                                    y: e.clientY,
-                                  })
-                                }
-                                onMouseLeave={() => setHoveredImage(null)}
+                                // onMouseEnter={() => setHoveredImage(imagePath)}
+                                // onMouseMove={(e) =>
+                                //   setCursorPos({
+                                //     x: e.clientX,
+                                //     y: e.clientY,
+                                //   })
+                                // }
+                                // onMouseLeave={() => setHoveredImage(null)}
                               >
                                 {item.name}
                               </Link>

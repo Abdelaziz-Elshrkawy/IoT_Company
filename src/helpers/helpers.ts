@@ -1,11 +1,11 @@
 export const whatsAppPhoneNumber = "201105380736";
-import {CategoriesT, PositionI, ProductI} from "@/types/types";
+import { CategoriesT, PositionI, ProductI } from "@/types/types";
 const productsAssetPath = "/products/";
 
 export const Products: CategoriesT = {
   "SMART WIFI LIGHTING SWITCHES": [
     {
-      name: "1 gang black or white with frame",
+      name: "1_gang_black_or_white_with_frame",
       urlName: "1_gang_black_or_white_with_frame",
       description:
         "Lighting touch switch with frame, 1CH on-off 10 A per channel, support mobile app control & voice command",
@@ -14,7 +14,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 1 gang black or white with frame Smart WiFi Lighting Switch! Price: 1850 L.E",
     },
     {
-      name: "1 gang black or white without frame",
+      name: "1_gang_black_or_white_without_frame",
       urlName: "1_gang_black_or_white_without_frame",
       description:
         "Lighting touch switch, 1CH on-off 10 A per channel, support mobile app control & voice command",
@@ -23,7 +23,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 1 gang black or white without frame Smart WiFi Lighting Switch! Price: 1750 L.E",
     },
     {
-      name: "2 gang black or white with frame",
+      name: "2_gang_black_or_white_with_frame",
       urlName: "2_gang_black_or_white_with_frame",
       description:
         "Lighting touch switch with frame, 2CH on-off 10 A per channel, support mobile app control & voice command",
@@ -32,7 +32,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 2 gang black or white with frame Smart WiFi Lighting Switch! Price: 1900 L.E",
     },
     {
-      name: "2 gang black or white without frame",
+      name: "2_gang_black_or_white_without_frame",
       urlName: "2_gang_black_or_white_without_frame",
       description:
         "Lighting touch switch, 2CH on-off 10 A per channel, support mobile app control & voice command",
@@ -41,7 +41,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 2 gang black or white without frame Smart WiFi Lighting Switch! Price: 1800 L.E",
     },
     {
-      name: "3 gang black or white with frame",
+      name: "3_gang_black_or_white_with_frame",
       urlName: "3_gang_black_or_white_with_frame",
       description:
         "Lighting touch switch with frame, 3CH on-off 10 A per channel, support mobile app control & voice command",
@@ -50,7 +50,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 3 gang black or white with frame Smart WiFi Lighting Switch! Price: 1950 L.E",
     },
     {
-      name: "3 gang black or white without frame",
+      name: "3_gang_black_or_white_without_frame",
       urlName: "3_gang_black_or_white_without_frame",
       description:
         "Lighting touch switch, 3CH on-off 10 A per channel, support mobile app control & voice command",
@@ -59,7 +59,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 3 gang black or white without frame Smart WiFi Lighting Switch! Price: 1850 L.E",
     },
     {
-      name: "4 gang black or white with frame",
+      name: "4_gang_black_or_white_with_frame",
       urlName: "4_gang_black_or_white_with_frame",
       description:
         "Lighting touch switch with frame, 4CH on-off 10 A per channel, support mobile app control & voice command",
@@ -68,7 +68,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 4 gang black or white with frame Smart WiFi Lighting Switch! Price: 2000 L.E",
     },
     {
-      name: "4 gang black or white without frame",
+      name: "4_gang_black_or_white_without_frame",
       urlName: "4_gang_black_or_white_without_frame",
       description:
         "Lighting touch switch, 4CH on-off 10 A per channel, support mobile app control & voice command",
@@ -251,24 +251,24 @@ export const getCategory = (categoryName: string) => {
 };
 export const getProduct = (
   productName: string,
-  categoryName: string
+  categoryName: string,
 ): ProductI => {
   return getCategory(categoryName)?.find(
-    (e: ProductI) => e.urlName === productName
+    (e: ProductI) => e.urlName === productName,
   );
 };
 
 export function productWhatsAppMessageConstructor(
   category: string,
   urlName: string,
-  name: string
+  name: string,
 ) {
   const categorySlug = category.split(" ").join("_");
   const productUrl = `${window.location.origin}/products/${categorySlug}-${urlName}`;
   const message = `Hello, I am interested in buying ${name}.\n\nProduct link: ${productUrl}`;
 
   return `https://api.whatsapp.com/send/?phone=201204089577&text=${encodeURIComponent(
-    message
+    message,
   )}&type=phone_number&app_absent=1`;
 }
 
@@ -283,7 +283,7 @@ export const offers = [
     id: 1,
     name: "Show",
     items: [
-      { quantity: 1, name: "2 gang black or white without frame" },
+      { quantity: 1, name: "2_gang_black_or_white_without_frame" },
       { quantity: 1, name: "Smart WiFi IR Universal Controller" },
     ],
   },
@@ -291,7 +291,7 @@ export const offers = [
     id: 2,
     name: "Room 1",
     items: [
-      { quantity: 2, name: "2 gang black or white without frame" },
+      { quantity: 2, name: "2_gang_black_or_white_without_frame" },
       { quantity: 1, name: "Smart WiFi IR Universal Controller" },
     ],
   },
@@ -299,7 +299,7 @@ export const offers = [
     id: 3,
     name: "Room 2",
     items: [
-      { quantity: 4, name: "2 gang black or white without frame" },
+      { quantity: 4, name: "2_gang_black_or_white_without_frame" },
       { quantity: 2, name: "Smart WiFi IR Universal Controller" },
     ],
   },
@@ -307,7 +307,7 @@ export const offers = [
   //   id: 4,
   //   name: "Home 1",
   //   items: [
-  //     { quantity: 8, name: "2 gang black or white without frame" },
+  //     { quantity: 8, name: "2_gang_black_or_white_without_frame" },
   //     { quantity: 2, name: "Smart WiFi IR Universal Controller" },
   //     { quantity: 1, name: "Alexa Echo dot 3" },
   //     { quantity: 1, name: "Smart door lock for wooden or Armored doors" },
@@ -317,7 +317,7 @@ export const offers = [
     id: 5,
     name: "Home 2",
     items: [
-      { quantity: 10, name: "2 gang black or white without frame" },
+      { quantity: 10, name: "2_gang_black_or_white_without_frame" },
       { quantity: 3, name: "Smart WiFi IR Universal Controller" },
       { quantity: 1, name: "Alexa Echo dot 3" },
       { quantity: 1, name: "Smart door lock for wooden or Armored doors" },
@@ -334,8 +334,6 @@ export const offers = [
   //   ],
   // },
 ];
-
-
 
 export const Positions: PositionI[] = [
   {
@@ -377,8 +375,8 @@ Basic knowledge of UX/UI principles is a plus.`,
 
       preferred: `Experience in smart home or tech industry branding.
 
-Familiarity with basic motion design or animation tools.`
-    }
+Familiarity with basic motion design or animation tools.`,
+    },
   },
 
   {
@@ -417,8 +415,8 @@ Ability to manage multiple projects and meet tight deadlines.`,
 
 Background in creating content for tech or smart home solutions.
 
-Knowledge of sound design and audio editing tools.`
-    }
+Knowledge of sound design and audio editing tools.`,
+    },
   },
 
   {
@@ -467,8 +465,8 @@ Knowledge of IoT cloud platforms (AWS IoT, Blynk, Firebase, etc.).
 
 Background in low-power embedded design and OTA firmware updates.
 
-Familiarity with mobile app integration and smart home ecosystems (Google Home, Alexa, Apple HomeKit).`
-    }
+Familiarity with mobile app integration and smart home ecosystems (Google Home, Alexa, Apple HomeKit).`,
+    },
   },
   {
     name: "Electrical Technician",
@@ -517,8 +515,8 @@ Valid driver’s license and willingness to travel to job sites as needed.`,
 
       preferred: `Certification in smart home systems or low-voltage installations.
 
-Experience with networking and IoT device integration.`
-    }
+Experience with networking and IoT device integration.`,
+    },
   },
   {
     name: "Web Developer",
@@ -567,7 +565,7 @@ Familiarity with smart home platforms (Tuya, Home Assistant, Google Home, Alexa,
 
 Understanding of cloud services (AWS, Firebase, Azure) and serverless architectures.
 
-Basic understanding of embedded systems or how web apps interact with hardware.`
-    }
-  }
-]
+Basic understanding of embedded systems or how web apps interact with hardware.`,
+    },
+  },
+];

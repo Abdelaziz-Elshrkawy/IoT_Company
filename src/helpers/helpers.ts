@@ -5,7 +5,7 @@ const productsAssetPath = "/products/";
 export const Products: CategoriesT = {
   "SMART WIFI LIGHTING SWITCHES": [
     {
-      name: "1_gang_black_or_white_with_frame",
+      name: "1 gang black or white with frame",
       urlName: "1_gang_black_or_white_with_frame",
       description:
         "Lighting touch switch with frame, 1CH on-off 10 A per channel, support mobile app control & voice command",
@@ -14,7 +14,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 1 gang black or white with frame Smart WiFi Lighting Switch! Price: 1850 L.E",
     },
     {
-      name: "1_gang_black_or_white_without_frame",
+      name: "1 gang black or white without frame",
       urlName: "1_gang_black_or_white_without_frame",
       description:
         "Lighting touch switch, 1CH on-off 10 A per channel, support mobile app control & voice command",
@@ -23,7 +23,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 1 gang black or white without frame Smart WiFi Lighting Switch! Price: 1750 L.E",
     },
     {
-      name: "2_gang_black_or_white_with_frame",
+      name: "2 gang black or white with frame",
       urlName: "2_gang_black_or_white_with_frame",
       description:
         "Lighting touch switch with frame, 2CH on-off 10 A per channel, support mobile app control & voice command",
@@ -32,7 +32,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 2 gang black or white with frame Smart WiFi Lighting Switch! Price: 1900 L.E",
     },
     {
-      name: "2_gang_black_or_white_without_frame",
+      name: "2 gang black or white without frame",
       urlName: "2_gang_black_or_white_without_frame",
       description:
         "Lighting touch switch, 2CH on-off 10 A per channel, support mobile app control & voice command",
@@ -41,7 +41,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 2 gang black or white without frame Smart WiFi Lighting Switch! Price: 1800 L.E",
     },
     {
-      name: "3_gang_black_or_white_with_frame",
+      name: "3 gang black or white with frame",
       urlName: "3_gang_black_or_white_with_frame",
       description:
         "Lighting touch switch with frame, 3CH on-off 10 A per channel, support mobile app control & voice command",
@@ -50,7 +50,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 3 gang black or white with frame Smart WiFi Lighting Switch! Price: 1950 L.E",
     },
     {
-      name: "3_gang_black_or_white_without_frame",
+      name: "3 gang black or white without frame",
       urlName: "3_gang_black_or_white_without_frame",
       description:
         "Lighting touch switch, 3CH on-off 10 A per channel, support mobile app control & voice command",
@@ -59,7 +59,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 3 gang black or white without frame Smart WiFi Lighting Switch! Price: 1850 L.E",
     },
     {
-      name: "4_gang_black_or_white_with_frame",
+      name: "4 gang black or white with frame",
       urlName: "4_gang_black_or_white_with_frame",
       description:
         "Lighting touch switch with frame, 4CH on-off 10 A per channel, support mobile app control & voice command",
@@ -68,7 +68,7 @@ export const Products: CategoriesT = {
         "I'm interested in the 4 gang black or white with frame Smart WiFi Lighting Switch! Price: 2000 L.E",
     },
     {
-      name: "4_gang_black_or_white_without_frame",
+      name: "4 gang black or white without frame",
       urlName: "4_gang_black_or_white_without_frame",
       description:
         "Lighting touch switch, 4CH on-off 10 A per channel, support mobile app control & voice command",
@@ -273,6 +273,9 @@ export function productWhatsAppMessageConstructor(
 }
 
 export function constructProductImagePath(productName: string) {
+  if (productName.includes("gang")) {
+    productName = productName.split(" ").join("_");
+  }
   return productsAssetPath + productName + ".jpg";
 }
 export function constructOffersImagePath(offerName: string) {
@@ -283,7 +286,7 @@ export const offers = [
     id: 1,
     name: "Show",
     items: [
-      { quantity: 1, name: "2_gang_black_or_white_without_frame" },
+      { quantity: 1, name: "2 gang black or white without frame" },
       { quantity: 1, name: "Smart WiFi IR Universal Controller" },
     ],
   },
@@ -291,7 +294,7 @@ export const offers = [
     id: 2,
     name: "Room 1",
     items: [
-      { quantity: 2, name: "2_gang_black_or_white_without_frame" },
+      { quantity: 2, name: "2 gang black or white without frame" },
       { quantity: 1, name: "Smart WiFi IR Universal Controller" },
     ],
   },
@@ -299,7 +302,7 @@ export const offers = [
     id: 3,
     name: "Room 2",
     items: [
-      { quantity: 4, name: "2_gang_black_or_white_without_frame" },
+      { quantity: 4, name: "2 gang black or white without frame" },
       { quantity: 2, name: "Smart WiFi IR Universal Controller" },
     ],
   },
@@ -307,7 +310,7 @@ export const offers = [
   //   id: 4,
   //   name: "Home 1",
   //   items: [
-  //     { quantity: 8, name: "2_gang_black_or_white_without_frame" },
+  //     { quantity: 8, name: "2 gang black or white without frame" },
   //     { quantity: 2, name: "Smart WiFi IR Universal Controller" },
   //     { quantity: 1, name: "Alexa Echo dot 3" },
   //     { quantity: 1, name: "Smart door lock for wooden or Armored doors" },
@@ -317,7 +320,7 @@ export const offers = [
     id: 5,
     name: "Home 2",
     items: [
-      { quantity: 10, name: "2_gang_black_or_white_without_frame" },
+      { quantity: 10, name: "2 gang black or white without frame" },
       { quantity: 3, name: "Smart WiFi IR Universal Controller" },
       { quantity: 1, name: "Alexa Echo dot 3" },
       { quantity: 1, name: "Smart door lock for wooden or Armored doors" },

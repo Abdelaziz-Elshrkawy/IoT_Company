@@ -6,10 +6,10 @@ import {
   offers,
   // Products,
 } from "@/helpers/helpers";
-// import { ProductI } from "@/types/types";
 import { motion } from "framer-motion";
 import { MessageCircle, Lightbulb, Bed, Home, ShieldCheck } from "lucide-react";
 import Image from "next/image";
+// import { ProductI } from "@/types/types";
 
 // const getProductRouteInfo = (name: string): string | undefined => {
 //   for (const [categoryName, products] of Object.entries(Products)) {
@@ -30,16 +30,16 @@ export default function OffersPage() {
 
   return (
     <>
-      <main className="min-h-screen to-gray-900 text-white py-16 px-6 md:px-12">
-        <section className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold mb-4">Limited Time Offers</h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+      <main className="min-h-screen to-gray-900 px-6 py-16 text-white md:px-12">
+        <section className="mb-12 text-center">
+          <h1 className="mb-4 text-5xl font-extrabold">Limited Time Offers</h1>
+          <p className="mx-auto max-w-2xl text-lg text-gray-300">
             Explore our exclusive smart home packages — premium features,
             unbeatable prices.
           </p>
         </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {offers.map((offer, index) => {
             const whatsappMessage = `Hello, I’m interested in the "${
               offer.name
@@ -49,13 +49,13 @@ export default function OffersPage() {
 
             const renderIcon = () => {
               if (offer.name === "Show")
-                return <Lightbulb className="text-yellow-500 w-6 h-6" />;
+                return <Lightbulb className="h-6 w-6 text-yellow-500" />;
               if (["Room 1", "Room 2"].includes(offer.name))
-                return <Bed className="text-blue-500 w-6 h-6" />;
+                return <Bed className="h-6 w-6 text-blue-500" />;
               if (["Home 1", "Home 2"].includes(offer.name))
-                return <Home className="text-green-600 w-6 h-6" />;
+                return <Home className="h-6 w-6 text-green-600" />;
               if (offer.name === "Safety")
-                return <ShieldCheck className="text-red-500 w-6 h-6" />;
+                return <ShieldCheck className="h-6 w-6 text-red-500" />;
               return null;
             };
 
@@ -66,13 +66,13 @@ export default function OffersPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white text-gray-800 shadow-2xl rounded-2xl p-6 flex flex-col justify-between transition-transform hover:-translate-y-1 hover:shadow-3xl relative group"
+                className="hover:shadow-3xl group relative flex flex-col justify-between rounded-2xl bg-white p-6 text-gray-800 shadow-2xl transition-transform hover:-translate-y-1"
               >
-                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-red-600 to-pink-500 text-white px-3 py-1 text-xs rounded-full shadow-md font-bold">
+                <div className="absolute -top-4 -right-4 rounded-full bg-gradient-to-br from-red-600 to-pink-500 px-3 py-1 text-xs font-bold text-white shadow-md">
                   10% OFF
                 </div>
 
-                <div className="flex items-center gap-2 mb-4">
+                <div className="mb-4 flex items-center gap-2">
                   {renderIcon()}
                   <h2 className="text-2xl font-bold">{offer.name}</h2>
                 </div>
@@ -83,7 +83,7 @@ export default function OffersPage() {
                     alt={offer.name}
                     width={400}
                     height={400}
-                    className="rounded-lg object-contain border border-gray-200"
+                    className="rounded-lg border border-gray-200 object-contain"
                   />
                 </div>
 
@@ -132,13 +132,13 @@ export default function OffersPage() {
 
                 <a
                   href={`https://api.whatsapp.com/send?phone=${whatsAppPhoneNumber}&text=${encodeURIComponent(
-                    whatsappMessage
+                    whatsappMessage,
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-center text-sm inline-flex items-center justify-center transition-all"
+                  className="mt-auto inline-flex items-center justify-center rounded bg-green-600 px-4 py-2 text-center text-sm text-white transition-all hover:bg-green-700"
                 >
-                  <MessageCircle className="w-4 h-4 mr-2" />
+                  <MessageCircle className="mr-2 h-4 w-4" />
                   Order on WhatsApp
                 </a>
               </motion.div>

@@ -5,6 +5,7 @@ import { NavigationBar } from "@/components/general/NavigationBar";
 import Footer from "@/components/general/Footer";
 import { Suspense } from "react";
 import { Toaster } from "sonner";
+import React from 'react'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -15,18 +15,18 @@ export default function ProductsPage({ category }: { category: string }) {
   return (
     <main
       key={new Date().toString()}
-      className="min-h-screen bg-gray-900 text-black py-16 px-6 md:px-12 relative"
+      className="relative min-h-screen bg-gray-900 px-6 py-16 text-black md:px-12"
     >
       <Back color="white" route="/categories" text="Categories" />
-      <div key={currentCategory} className="mb-16 mt-10">
-        <h2 className="text-3xl font-semibold mb-8 text-white border-b-2 border-gray-600 pb-2">
+      <div key={currentCategory} className="mt-10 mb-16">
+        <h2 className="mb-8 border-b-2 border-gray-600 pb-2 text-3xl font-semibold text-white">
           {currentCategory} PRODUCTS
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products &&
             (products as ProductI[]).map((product: ProductI, index: number) => (
               <motion.div
-                className="bg-white rounded-xl shadow-lg p-6 flex flex-col justify-evenly items-center text-center"
+                className="flex flex-col items-center justify-evenly rounded-xl bg-white p-6 text-center shadow-lg"
                 key={`${currentCategory.split(" ").join("_")}-${
                   product.name
                 }-${index}`}
@@ -37,7 +37,7 @@ export default function ProductsPage({ category }: { category: string }) {
               >
                 <Suspense fallback={<LoadingImage />}>
                   <Link
-                    className="h-full flex justify-center"
+                    className="flex h-full justify-center"
                     href={`/categories/${currentCategory}/${currentCategory}-${product.urlName}`}
                   >
                     <Image
@@ -45,11 +45,11 @@ export default function ProductsPage({ category }: { category: string }) {
                       height={300}
                       src={constructProductImagePath(product.name)}
                       alt={product.name}
-                      className=" object-contain rounded-lg mb-4 hover:scale-105 transition-all duration-200"
+                      className="mb-4 rounded-lg object-contain transition-all duration-200 hover:scale-105"
                     />
                   </Link>
                 </Suspense>
-                <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+                <h3 className="mb-2 text-xl font-semibold">{product.name}</h3>
                 {/* <p className="text-gray-800 mb-4 flex-grow">
                   {product.description}
                 </p> */}
@@ -57,7 +57,7 @@ export default function ProductsPage({ category }: { category: string }) {
                 {/*    Price: {product.price_LE} L.E*/}
                 {/*</p>*/}
                 <ProductUrl
-                  className="mt-auto inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition"
+                  className="mt-auto inline-flex items-center justify-center rounded-md bg-green-500 px-4 py-2 text-white transition hover:bg-green-600"
                   url={`/products/${currentCategory}-${product.urlName}`}
                 />
               </motion.div>

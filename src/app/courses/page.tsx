@@ -2,13 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import Image from "next/image";
 import { Clock, DollarSign, BookOpen, Target } from "lucide-react";
@@ -234,7 +227,6 @@ export default function CoursesPage() {
                       <p className="flex items-center gap-2">
                         <DollarSign className="h-4 w-4" /> {course.price}
                       </p>
-                      {/* <Separator className="my-3" /> */}
                     </div>
 
                     <div className="w-full space-y-4">

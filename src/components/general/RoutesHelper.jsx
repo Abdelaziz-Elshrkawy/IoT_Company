@@ -1,5 +1,11 @@
 import { Routes } from "@/types/enums";
-import { BoxIcon, Briefcase, HomeIcon, PercentCircle } from "lucide-react";
+import {
+  Book,
+  BoxIcon,
+  Briefcase,
+  HomeIcon,
+  PercentCircle,
+} from "lucide-react";
 import { TbExclamationCircle } from "react-icons/tb";
 
 export const routes = [
@@ -24,8 +30,13 @@ export const routes = [
     icon: <Briefcase className="inline pr-1" />,
   },
   {
+    path: Routes.Courses,
+    name: "Courses",
+    icon: <Book className="inline pr-1 text-2xl" />,
+  },
+  {
     path: Routes.About,
     name: "About",
-    icon: <TbExclamationCircle className="inline text-2xl pr-1" />,
+    icon: <TbExclamationCircle className="inline pr-1 text-2xl" />,
   },
 ];

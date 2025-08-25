@@ -5,7 +5,7 @@ import { NavigationBar } from "@/components/general/NavigationBar";
 import Footer from "@/components/general/Footer";
 import { Suspense } from "react";
 import { Toaster } from "sonner";
-import React from 'react'
+import React from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,16 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-gray-900 antialiased`}
       >
         <NavigationBar key={0} />
-        <Suspense
-          fallback={
-            <div className="absolute top-0 right-0 h-scree w-full blur-lg"></div>
-          }
-        >
-          <div className="mt-14 md:mt-16">{children}</div>
-        </Suspense>
+
+        <div className="mt-14 md:mt-16">{children}</div>
+
         <Footer />
         <Toaster richColors position="top-center" />
       </body>

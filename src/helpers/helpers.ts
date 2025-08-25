@@ -272,6 +272,16 @@ export function productWhatsAppMessageConstructor(
   )}&type=phone_number&app_absent=1`;
 }
 
+export function courseWhatsAppMessageConstructor(courseName: string) {
+  const categorySlug = courseName.split(" ").join("_");
+  const courseLink = `${window.location.origin}/courses/${categorySlug}`;
+  const message = `Hello, I am interested to attend ${courseName}.\n\nCourse link: ${courseLink}`;
+
+  return `https://api.whatsapp.com/send/?phone=201204089577&text=${encodeURIComponent(
+    message,
+  )}&type=phone_number&app_absent=1`;
+}
+
 export function constructProductImagePath(productName: string) {
   if (productName.includes("gang")) {
     productName = productName.split(" ").join("_");

@@ -4,4 +4,5 @@ export enum Routes {
   Offers = "/offers",
   Career = "/career",
   About = "/about",
+  Courses = "/courses",
 }

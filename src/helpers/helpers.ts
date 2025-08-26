@@ -718,7 +718,7 @@ export const courses = [
     level: "أساسي وهام لمجال الأنظمة المضمنة",
     images: [
       "courses/C_Programming/C_Programming.png",
-      "public/courses/C_Programming/C_Programming_1.png",
+      "courses/C_Programming/C_Programming_1.png",
     ],
     content: [
       "أساسيات لغة C",

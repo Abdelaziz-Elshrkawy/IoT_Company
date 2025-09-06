@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
-import { Clock, DollarSign, BookOpen, Target } from "lucide-react";
-import { courses, courseWhatsAppMessageConstructor } from "@/helpers/helpers";
+import { courses } from "@/helpers/helpers";
 import { Button } from "@/components/ui/button";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -13,14 +12,9 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { useEffect, useState } from "react";
+import { Separators } from "@/types/enums";
 
-export default function Courses() {
-  const [origin, setOrigin] = useState("");
-
-  useEffect(() => {
-    setOrigin(window.location.origin);
-  }, []);
+export default function CoursesN() {
   return (
     <div className="mt-8 min-h-screen px-6 py-10">
       <motion.h1
@@ -31,39 +25,37 @@ export default function Courses() {
       >
         Ready to Level Up to Next Step !
       </motion.h1>
-
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ staggerChildren: 0.3 }}
-        className="flex flex-col gap-6"
+        className="mb-8 flex flex-wrap items-center justify-center gap-6"
       >
         {courses.map((course, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: idx * 0.15 }}
-            className="h-full"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.15, duration: 0.5 }}
+            className="w-full sm:w-[90%] md:w-[45%] lg:w-[45%]"
           >
-            <Card className="h-full rounded-2xl border p-4 shadow-lg transition hover:shadow-xl">
+            <Card className="h-full rounded-2xl border border-gray-700 bg-white p-6 shadow-2xl transition-all duration-300 hover:scale-[1.02]">
               <CardHeader>
-                <CardTitle className="text-4xl font-semibold">
+                <CardTitle className="mb-2 text-2xl font-bold text-cyan-400">
                   {course.title}
                 </CardTitle>
-                <p className="text-muted-foreground text-sm">{course.level}</p>
+                <p className="text-sm text-gray-400">{course.level}</p>
               </CardHeader>
-              <CardContent className="flex h-full items-start gap-10">
-                {/* Carousel for images */}
+              <CardContent className="flex flex-col">
                 {course.images && course.images.length > 0 && (
                   <Carousel
                     plugins={[Autoplay({ delay: 3000 })]}
-                    className="w-[50%] rounded-md shadow-sm"
+                    className="mb-6 w-full rounded-xl shadow-lg"
                   >
                     <CarouselContent>
                       {course.images.map((img, i) => (
                         <CarouselItem key={i}>
-                          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md">
+                          <div className="relative aspect-video w-full overflow-hidden rounded-xl">
                             <Image
                               src={img}
                               alt={`${course.title} preview ${i + 1}`}
@@ -76,59 +68,38 @@ export default function Courses() {
                     </CarouselContent>
                   </Carousel>
                 )}
-                <div className="flex h-full w-[50%] flex-col items-start justify-between">
-                  <div className="h-[90%] w-full">
-                    <div className="mb-2 rounded-lg border bg-white p-4 shadow-sm">
-                      <p className="flex items-center gap-2">
-                        <Clock className="h-4 w-4" /> {course.hours}
-                      </p>
-                      <p className="flex items-center gap-2">
-                        <DollarSign className="h-4 w-4" /> {course.price}
-                      </p>
-                    </div>
 
-                    <div className="w-full space-y-4">
-                      {/* Content Section */}
-                      <div className="rounded-lg border bg-white p-4 shadow-sm">
-                        <div className="flex items-center gap-2 font-medium">
-                          <BookOpen className="h-4 w-4" /> محتوى التدريب
-                        </div>
-                        <ul className="mt-2 list-disc space-y-1 ps-6 text-sm">
-                          {course.content.map((c, i) => (
-                            <li key={i}>{c}</li>
-                          ))}
-                        </ul>
-                      </div>
+                <div className="flex w-full flex-col items-start justify-between">
+                  {/* <div className="w-full space-y-4">
+              <div className="rounded-xl border border-gray-700 bg-gray-900 p-4 shadow-sm">
+                <div className="mb-2 flex items-center gap-2 font-medium text-gray-200">
+                  <Clock className="h-4 w-4 text-cyan-400" />
+                  <span className="text-sm">Duration:</span>
+                  <span className="font-semibold">{course.hours}</span>
+                </div>
+                <div className="flex items-center gap-2 font-medium text-gray-200">
+                  <DollarSign className="h-4 w-4 text-cyan-400" />
+                  <span className="text-sm">Price:</span>
+                  <span className="font-semibold">{course.price}</span>
+                </div>
+              </div>
+            </div> */}
 
-                      {/* Outcomes Section */}
-                      <div className="rounded-lg border bg-white p-4 shadow-sm">
-                        <div className="flex items-center gap-2 font-medium">
-                          <Target className="h-4 w-4" /> المخرجات
-                        </div>
-                        <ul className="mt-2 list-disc space-y-1 ps-6 text-sm">
-                          {course.outcomes.map((o, i) => (
-                            <li key={i}>{o}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 flex h-[20%] w-full justify-center">
+                  <div className="mt-6 flex w-full flex-col gap-4">
                     <Button
                       asChild
-                      className="rounded-full bg-green-600 text-white hover:bg-green-700"
+                      className="w-full rounded-full bg-cyan-600 px-8 py-3 text-lg font-bold text-white transition-all duration-300 hover:bg-cyan-500 hover:shadow-lg hover:shadow-cyan-500/50"
                     >
                       <Link
-                        href={courseWhatsAppMessageConstructor(
-                          course.title,
-                          origin,
-                        )}
-                        target="_blank"
+                        href={`/courses/${course.title.replace(/\s+/g, Separators.CourseNameParam)}`}
                       >
-                        تواصل عبر WhatsApp
+                        More Details
                       </Link>
                     </Button>
+                    <Button
+                      asChild
+                      className="w-full rounded-full bg-green-600 px-8 py-3 text-lg font-bold text-white transition-all duration-300 hover:bg-green-500 hover:shadow-lg hover:shadow-green-500/50"
+                    ></Button>
                   </div>
                 </div>
               </CardContent>
@@ -136,22 +107,6 @@ export default function Courses() {
           </motion.div>
         ))}
       </motion.div>
-
-      {/* <div className="mt-12 text-center">
-        <p className="text-lg font-medium">
-          جميع الكورسات مدعومة ومعتمدة من شركة KPEK ✅
-        </p>
-        <p className="text-muted-foreground mt-2 text-sm">
-          تواصل عبر الواتساب للحجز: <strong>+20 120 408 9577</strong>
-        </p>
-        <Link
-          href="https://www.linkedin.com/in/carl-khalil-544755134"
-          target="_blank"
-          className="mt-2 inline-block text-blue-600 underline"
-        >
-          LinkedIn Profile
-        </Link>
-      </div> */}
     </div>
   );
 }

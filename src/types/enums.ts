@@ -6,3 +6,7 @@ export enum Routes {
   About = "/about",
   Courses = "/courses",
 }
+
+export enum Separators {
+  CourseNameParam = "____",
+}

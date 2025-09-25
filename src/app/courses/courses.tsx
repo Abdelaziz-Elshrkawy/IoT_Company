@@ -41,10 +41,14 @@ export default function CoursesN() {
           >
             <Card className="h-full rounded-2xl border border-gray-700 bg-white p-6 shadow-2xl transition-all duration-300 hover:scale-[1.02]">
               <CardHeader>
-                <CardTitle className="mb-2 text-2xl font-bold text-cyan-400">
-                  {course.title}
-                </CardTitle>
-                <p className="text-sm text-gray-400">{course.level}</p>
+                <CardTitle
+                  className="mb-2 text-2xl font-bold text-cyan-400"
+                  dangerouslySetInnerHTML={{ __html: course.title }}
+                ></CardTitle>
+                <p
+                  className="text-sm text-gray-400"
+                  dangerouslySetInnerHTML={{ __html: course.level }}
+                ></p>
               </CardHeader>
               <CardContent className="flex flex-col">
                 {course.images && course.images.length > 0 && (

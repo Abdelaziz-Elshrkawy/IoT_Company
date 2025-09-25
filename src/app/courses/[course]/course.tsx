@@ -61,9 +61,8 @@ export default function CourseDetailsPage({ param }: { param: string }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         className="mb-8 text-center text-xl text-gray-400"
-      >
-        {course.level}
-      </motion.p>
+        dangerouslySetInnerHTML={{ __html: course.level }}
+      ></motion.p>
 
       <div className="flex flex-col items-center justify-center gap-6">
         <div className="w-full max-w-2xl space-y-4">
@@ -97,7 +96,7 @@ export default function CourseDetailsPage({ param }: { param: string }) {
             </h2>
             <ul className="list-disc space-y-2 ps-6 text-gray-400">
               {course.content.map((c, i) => (
-                <li key={i}>{c}</li>
+                <li key={i} dangerouslySetInnerHTML={{ __html: c }}></li>
               ))}
             </ul>
           </motion.div>
@@ -114,7 +113,7 @@ export default function CourseDetailsPage({ param }: { param: string }) {
             </h2>
             <ul className="list-disc space-y-2 ps-6 text-gray-400">
               {course.outcomes.map((o, i) => (
-                <li key={i}>{o}</li>
+                <li key={i} dangerouslySetInnerHTML={{ __html: o }}></li>
               ))}
             </ul>
           </motion.div>

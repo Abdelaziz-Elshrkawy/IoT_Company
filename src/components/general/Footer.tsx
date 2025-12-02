@@ -1,7 +1,6 @@
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { TbBrandTiktok } from "react-icons/tb";
 import { routes } from "./RoutesHelper";
 export default function Footer() {
   return (
@@ -57,7 +56,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <TbBrandTiktok className="w-5 h-5 hover:text-red-300 font-bold transition-all duration-300" />
+              <Twitter className="w-5 h-5 hover:text-red-300 font-bold transition-all duration-300" />
             </a>
             <a
               href="https://www.instagram.com/kpekcoumpany"

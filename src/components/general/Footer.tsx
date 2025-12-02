@@ -56,7 +56,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Twitter className="w-5 h-5 hover:text-red-300 font-bold transition-all duration-300" />
+              <Twitter className="w-5 h-5 hover:text-[#1DA1F2] font-bold transition-all duration-300" />
             </a>
             <a
               href="https://www.instagram.com/kpekcoumpany"

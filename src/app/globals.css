@@ -3,7 +3,7 @@
 @import "@fontsource/roboto";
 /*---break---*/
 @custom-variant dark (&:is(.dark *));
-body{
+body {
   overflow-x: hidden;
 }
 /*:root {*/

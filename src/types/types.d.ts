@@ -1,3 +1,4 @@
+import { useLanguage } from "@/contexts/language";
 import React from "react";
 
 declare module "@/components/ui/sidebar" {
@@ -17,23 +18,23 @@ export enum ProductCategory {
 }
 
 export interface ProductI {
-  name: string;
+  name: LocalizationI;
   urlName: string;
-  category: ProductCategory;
-  description: string;
-  image: string;
-  whatsappMessage: string;
+  category?: ProductCategory;
+  description: LocalizationI;
+  image?: string;
+  whatsappMessage: LocalizationI;
   price_LE: number;
 }
 
-export type CategoryT = ProductI[];
+export type CategoryT = { catName: LocalizationI; products: ProductI[] };
 
-export type CategoriesT = { [key: string]: Category };
+export type CategoriesT = { [key: string]: CategoryT };
 
 export interface FeatureI {
   id: number;
-  title: string;
-  description: string;
+  title: LocalizationI;
+  description: LocalizationI;
   icon: React.JSX.Element;
   image: string;
   bg: string;
@@ -41,13 +42,26 @@ export interface FeatureI {
 }
 
 export interface PositionI {
-  name: string,
-  description: PositionDescriptionI
+  name: string;
+  description: PositionDescriptionI;
 }
 
 export interface PositionDescriptionI {
-  jobDescription: string,
-  requirements: string,
-  keyResponsibilities: string
-  preferred: string
+  jobDescription: string;
+  requirements: string;
+  keyResponsibilities: string;
+  preferred: string;
+}
+
+export interface LocalizationI {
+  ar: string;
+  en: string;
+}
+
+export type LocalLanguages = "ar" | "en";
+
+export interface LanguageProviderI {
+  lang: LocalLanguages;
+  dir: "ltr" | "rtl";
+  toggleLang: (lang: LocalLanguages) => void;
 }

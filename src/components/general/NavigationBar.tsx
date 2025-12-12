@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
 import { routes } from "./RoutesHelper";
+import { useLanguage } from "@/contexts/language"; // import your context hook
 
 export function NavigationBar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { lang, toggleLang } = useLanguage(); // get lang & toggle function
 
   useEffect(() => {
     if (sidebarOpen) {
@@ -16,71 +18,100 @@ export function NavigationBar() {
       document.body.style.overflow = "";
     }
 
-    // Cleanup on unmount
     return () => {
       document.body.style.overflow = "";
     };
   }, [sidebarOpen]);
+
   return (
-    <div className="flex flex-col fixed w-full top-0 z-[100]">
-      {/* Backdrop - must come BEFORE sidebar in DOM */}
-      {/* {sidebarOpen && (
-        <div
-          className="md:hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-30"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )} */}
+    <div className="fixed top-0 z-[100] flex w-full flex-col">
       {/* Top Navbar - visible only on md+ */}
-      <header className="hidden md:flex items-center justify-between px-6 py-4 shadow bg-white">
+      <header className="hidden items-center justify-between bg-white px-6 py-4 shadow md:flex">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.jpg" width={40} height={40} alt="Logo" />
-          <span className="font-bold text-lg">KPEK</span>
+          <span className="text-lg font-bold">KPEK</span>
         </Link>
-        <nav className="flex gap-6 font-[roboto] font-bold items-end">
+
+        <nav className="flex items-end gap-6 font-[roboto] font-bold">
           {routes.map((route, i) => (
             <Link key={i} href={route.path} className="text-lg text-gray-900">
               {route.name}
             </Link>
           ))}
+          {/* Language Toggle */}
+          <div className="flex items-center gap-2">
+            <Button
+              variant={lang === "en" ? "default" : "outline"}
+              size="sm"
+              onClick={() => toggleLang("en")}
+            >
+              EN
+            </Button>
+            <Button
+              variant={lang === "ar" ? "default" : "outline"}
+              size="sm"
+              onClick={() => toggleLang("ar")}
+            >
+              AR
+            </Button>
+          </div>
         </nav>
       </header>
 
       {/* Mobile Header */}
-      <header className="md:hidden flex items-center justify-between px-4 py-3 z-50 shadow bg-white relative">
+      <header className="relative z-50 flex items-center justify-between bg-white px-4 py-3 shadow md:hidden">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.jpg" width={28} height={28} alt="Logo" />
-          <span className="font-semibold text-base">KPEK</span>
+          <span className="text-base font-semibold">KPEK</span>
         </Link>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="text-gray-900"
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-        >
-          <Menu className="h-6 w-6 mr" />
-        </Button>
+        <div className="flex items-center gap-2">
+          {/* Language Toggle */}
+          <Button
+            variant={lang === "en" ? "default" : "outline"}
+            size="sm"
+            onClick={() => toggleLang("en")}
+          >
+            EN
+          </Button>
+          <Button
+            variant={lang === "ar" ? "default" : "outline"}
+            size="sm"
+            onClick={() => toggleLang("ar")}
+          >
+            AR
+          </Button>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-gray-900"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          >
+            <Menu className="mr h-6 w-6" />
+          </Button>
+        </div>
       </header>
 
-      {/* Sidebar - must come AFTER backdrop in DOM */}
+      {/* Sidebar backdrop */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30"
+          className="fixed inset-0 z-30 bg-black/30 backdrop-blur-sm"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
       {/* Custom Sidebar */}
       <div
-        className={`fixed top-14 right-0 h-screen w-[50%] z-40 bg-white shadow-lg transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-14 right-0 z-40 h-screen w-[50%] bg-white shadow-lg transition-transform duration-300 ease-in-out md:hidden ${
           sidebarOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <nav className="flex flex-col p-6 space-y-5">
+        <nav className="flex flex-col space-y-5 p-6">
           {routes.map((route, i) => (
             <Link
               key={i}
               href={route.path}
-              className="flex items-center gap-2 text-gray-800 font-medium hover:text-blue-600"
+              className="flex items-center gap-2 font-medium text-gray-800 hover:text-blue-600"
               onClick={() => setSidebarOpen(false)}
             >
               {route.icon}

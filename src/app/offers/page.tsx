@@ -1,5 +1,6 @@
 "use client";
 
+import { useLanguage } from "@/contexts/language";
 import {
   constructOffersImagePath,
   whatsAppPhoneNumber,
@@ -21,21 +22,33 @@ import Image from "next/image";
 //   return undefined;
 // };
 
+export const offersSectionText = {
+  title: {
+    en: "Limited Time Offers",
+    ar: "عروض محدودة الوقت",
+  },
+  description: {
+    en: "Explore our exclusive smart home packages — premium features, unbeatable prices.",
+    ar: "اكتشف باقات المنزل الذكي الحصرية لدينا — ميزات مميزة وأسعار لا تقارن.",
+  },
+};
+
 export default function OffersPage() {
   // const [hoveredImage, setHoveredImage] = useState<string | null>(null);
   // const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({
   //   x: 0,
   //   y: 0,
   // });
-
+  const { lang, dir } = useLanguage();
   return (
     <>
       <main className="min-h-screen to-gray-900 px-6 py-16 text-white md:px-12">
         <section className="mb-12 text-center">
-          <h1 className="mb-4 text-5xl font-extrabold">Limited Time Offers</h1>
+          <h1 className="mb-4 text-5xl font-extrabold">
+            {offersSectionText.title[lang]}
+          </h1>
           <p className="mx-auto max-w-2xl text-lg text-gray-300">
-            Explore our exclusive smart home packages — premium features,
-            unbeatable prices.
+            {offersSectionText.description[lang]}
           </p>
         </section>
 
@@ -48,19 +61,20 @@ export default function OffersPage() {
               .join("\n")}`;
 
             const renderIcon = () => {
-              if (offer.name === "Show")
+              if (offer.name["en"] === "Show")
                 return <Lightbulb className="h-6 w-6 text-yellow-500" />;
-              if (["Room 1", "Room 2"].includes(offer.name))
+              if (["Room 1", "Room 2"].includes(offer.name["en"]))
                 return <Bed className="h-6 w-6 text-blue-500" />;
-              if (["Home 1", "Home 2"].includes(offer.name))
+              if (["Home 1", "Home 2"].includes(offer.name["en"]))
                 return <Home className="h-6 w-6 text-green-600" />;
-              if (offer.name === "Safety")
+              if (offer.name["en"] === "Safety")
                 return <ShieldCheck className="h-6 w-6 text-red-500" />;
               return null;
             };
 
             return (
               <motion.div
+                dir={dir}
                 key={offer.id}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -74,13 +88,13 @@ export default function OffersPage() {
 
                 <div className="mb-4 flex items-center gap-2">
                   {renderIcon()}
-                  <h2 className="text-2xl font-bold">{offer.name}</h2>
+                  <h2 className="text-2xl font-bold">{offer.name[lang]}</h2>
                 </div>
 
                 <div className="relative mb-6 flex justify-center">
                   <Image
-                    src={constructOffersImagePath(offer.name)}
-                    alt={offer.name}
+                    src={constructOffersImagePath(offer.name["en"])}
+                    alt={offer.name[lang]}
                     width={400}
                     height={400}
                     className="rounded-lg border border-gray-200 object-contain"

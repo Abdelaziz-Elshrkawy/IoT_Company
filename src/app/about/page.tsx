@@ -56,8 +56,8 @@ export default function AboutPage() {
           <p className="m-2 text-3xl font-bold">
             {aboutText.whyChooseUsTitle[lang]}
           </p>
-          {aboutText.whyChooseUsPoints[lang].map((e) => (
-            <p dir={dir}>{e}</p>
+          {aboutText.whyChooseUsPoints[lang].map((e,i) => (
+            <p key={i} dir={dir}>{e}</p>
           ))}
         </motion.div>
         <motion.div

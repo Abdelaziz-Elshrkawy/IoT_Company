@@ -1,4 +1,3 @@
-import { useLanguage } from "@/contexts/language";
 import React from "react";
 
 declare module "@/components/ui/sidebar" {

@@ -53,9 +53,12 @@ export default function AboutPage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <p className="m-2 text-3xl font-bold">Why choose us?</p>
-          <p>✔ Proven expertise with global smart home brands</p>
-          <p>✔ 100% customer satisfaction and ongoing support</p>
+          <p className="m-2 text-3xl font-bold">
+            {aboutText.whyChooseUsTitle[lang]}
+          </p>
+          {aboutText.whyChooseUsPoints[lang].map((e) => (
+            <p dir={dir}>{e}</p>
+          ))}
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}

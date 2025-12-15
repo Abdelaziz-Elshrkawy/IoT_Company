@@ -23,8 +23,6 @@ export default function Home() {
 
   const [activeCategory, setActiveCategory] = useState(categoriesData[0]?.key);
 
-  console.log(categoriesData);
-
   // useEffect(() => {
   //   if (!categoriesData.length) return;
 

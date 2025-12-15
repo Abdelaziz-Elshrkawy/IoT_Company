@@ -13,17 +13,25 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { Separators } from "@/types/enums";
+import { useLanguage } from "@/contexts/language";
 
 export default function CoursesN() {
+  const { lang, dir } = useLanguage();
+  const nextStepText = {
+    en: "Ready to Level Up to Next Step!",
+    ar: "هل أنت مستعد للارتقاء إلى الخطوة التالية!",
+  };
+
   return (
     <div className="mt-8 min-h-screen px-6 py-10">
       <motion.h1
+        dir={dir}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="mb-8 text-center text-3xl font-bold text-white"
       >
-        Ready to Level Up to Next Step !
+        {nextStepText[lang]}
       </motion.h1>
       <motion.div
         initial={{ opacity: 0 }}

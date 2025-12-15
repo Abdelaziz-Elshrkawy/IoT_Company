@@ -5,6 +5,7 @@ import { NavigationBar } from "@/components/general/NavigationBar";
 import Footer from "@/components/general/Footer";
 import { Toaster } from "sonner";
 import React from "react";
+import { LanguageProvider } from "@/contexts/language";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,11 +33,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-gray-900 antialiased`}
       >
-        <NavigationBar key={0} />
+        <LanguageProvider>
+          <NavigationBar key={0} />
+          <div className="mt-14 md:mt-16">{children}</div>
+          <Footer />
+        </LanguageProvider>
 
-        <div className="mt-14 md:mt-16">{children}</div>
-
-        <Footer />
         <Toaster richColors position="top-center" />
       </body>
     </html>

@@ -1,3 +1,4 @@
+import { useLanguage } from "@/contexts/language";
 import { ArrowLeftCircleIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -14,6 +15,7 @@ function Back({
   color?: string;
   className?: string;
 }) {
+  const { lang } = useLanguage();
   return (
     <>
       <Link
@@ -26,7 +28,9 @@ function Back({
         )}
       >
         <ArrowLeftCircleIcon className="h-6 w-6 transition-transform duration-200 group-hover:-translate-x-1" />
-        <span className="text-sm font-semibold">Back to {text}</span>
+        <span className="text-sm font-semibold">
+          {lang === "en" ? "Back to" : "العودة الى"} {text}
+        </span>
       </Link>
     </>
   );

@@ -3,259 +3,504 @@ import { CategoriesT, PositionI, ProductI } from "@/types/types";
 const productsAssetPath = "/products/";
 
 export const Products: CategoriesT = {
-  "SMART WIFI LIGHTING SWITCHES": [
-    {
-      name: "1 gang black or white with frame",
-      urlName: "1_gang_black_or_white_with_frame",
-      description:
-        "Lighting touch switch with frame, 1CH on-off 10 A per channel, support mobile app control & voice command",
-      price_LE: 1850,
-      whatsappMessage:
-        "I'm interested in the 1 gang black or white with frame Smart WiFi Lighting Switch! Price: 1850 L.E",
+  "SMART WIFI LIGHTING SWITCHES": {
+    catName: {
+      ar: "مفاتيح إضاءة ذكية تعمل بالواي فاي",
+      en: "SMART WIFI LIGHTING SWITCHES",
     },
-    {
-      name: "1 gang black or white without frame",
-      urlName: "1_gang_black_or_white_without_frame",
-      description:
-        "Lighting touch switch, 1CH on-off 10 A per channel, support mobile app control & voice command",
-      price_LE: 1750,
-      whatsappMessage:
-        "I'm interested in the 1 gang black or white without frame Smart WiFi Lighting Switch! Price: 1750 L.E",
+    products: [
+      {
+        name: {
+          en: "1 gang black or white with frame",
+          ar: "مفتاح 1 طرف أسود أو أبيض مع إطار",
+        },
+        urlName: "1_gang_black_or_white_with_frame",
+        description: {
+          en: "Lighting touch switch with frame, 1CH on-off 10 A per channel, support mobile app control & voice command",
+          ar: "مفتاح لمس للإضاءة مع إطار، قناة واحدة تشغيل/إيقاف 10 أمبير لكل قناة، يدعم التحكم عبر التطبيق والأوامر الصوتية",
+        },
+        price_LE: 1850,
+        whatsappMessage: {
+          en: "I'm interested in the 1 gang black or white with frame Smart WiFi Lighting Switch! Price: 1850 L.E",
+          ar: "أنا مهتم بمفتاح الإضاءة الذكي طرف واحد أسود أو أبيض مع إطار! السعر: 1850 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "1 gang black or white without frame",
+          ar: "مفتاح 1 طرف أسود أو أبيض بدون إطار",
+        },
+        urlName: "1_gang_black_or_white_without_frame",
+        description: {
+          en: "Lighting touch switch, 1CH on-off 10 A per channel, support mobile app control & voice command",
+          ar: "مفتاح لمس للإضاءة بدون إطار، قناة واحدة تشغيل/إيقاف 10 أمبير لكل قناة، يدعم التحكم عبر التطبيق والأوامر الصوتية",
+        },
+        price_LE: 1750,
+        whatsappMessage: {
+          en: "I'm interested in the 1 gang black or white without frame Smart WiFi Lighting Switch! Price: 1750 L.E",
+          ar: "أنا مهتم بمفتاح الإضاءة الذكي طرف واحد أسود أو أبيض بدون إطار! السعر: 1750 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "2 gang black or white with frame",
+          ar: "مفتاح 2 طرف أسود أو أبيض مع إطار",
+        },
+        urlName: "2_gang_black_or_white_with_frame",
+        description: {
+          en: "Lighting touch switch with frame, 2CH on-off 10 A per channel, support mobile app control & voice command",
+          ar: "مفتاح لمس للإضاءة مع إطار، قناتان تشغيل/إيقاف 10 أمبير لكل قناة، يدعم التحكم عبر التطبيق والأوامر الصوتية",
+        },
+        price_LE: 1900,
+        whatsappMessage: {
+          en: "I'm interested in the 2 gang black or white with frame Smart WiFi Lighting Switch! Price: 1900 L.E",
+          ar: "أنا مهتم بمفتاح الإضاءة الذكي 2 طرف أسود أو أبيض مع إطار! السعر: 1900 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "2 gang black or white without frame",
+          ar: "مفتاح 2 طرف أسود أو أبيض بدون إطار",
+        },
+        urlName: "2_gang_black_or_white_without_frame",
+        description: {
+          en: "Lighting touch switch, 2CH on-off 10 A per channel, support mobile app control & voice command",
+          ar: "مفتاح لمس للإضاءة بدون إطار، قناتان تشغيل/إيقاف 10 أمبير لكل قناة، يدعم التحكم عبر التطبيق والأوامر الصوتية",
+        },
+        price_LE: 1800,
+        whatsappMessage: {
+          en: "I'm interested in the 2 gang black or white without frame Smart WiFi Lighting Switch! Price: 1800 L.E",
+          ar: "أنا مهتم بمفتاح الإضاءة الذكي 2 طرف أسود أو أبيض بدون إطار! السعر: 1800 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "3 gang black or white with frame",
+          ar: "مفتاح 3 طرف أسود أو أبيض مع إطار",
+        },
+        urlName: "3_gang_black_or_white_with_frame",
+        description: {
+          en: "Lighting touch switch with frame, 3CH on-off 10 A per channel, support mobile app control & voice command",
+          ar: "مفتاح لمس للإضاءة مع إطار، 3 قنوات تشغيل/إيقاف 10 أمبير لكل قناة، يدعم التحكم عبر التطبيق والأوامر الصوتية",
+        },
+        price_LE: 1950,
+        whatsappMessage: {
+          en: "I'm interested in the 3 gang black or white with frame Smart WiFi Lighting Switch! Price: 1950 L.E",
+          ar: "أنا مهتم بمفتاح الإضاءة الذكي 3 طرف أسود أو أبيض مع إطار! السعر: 1950 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "3 gang black or white without frame",
+          ar: "مفتاح 3 طرف أسود أو أبيض بدون إطار",
+        },
+        urlName: "3_gang_black_or_white_without_frame",
+        description: {
+          en: "Lighting touch switch, 3CH on-off 10 A per channel, support mobile app control & voice command",
+          ar: "مفتاح لمس للإضاءة بدون إطار، 3 قنوات تشغيل/إيقاف 10 أمبير لكل قناة، يدعم التحكم عبر التطبيق والأوامر الصوتية",
+        },
+        price_LE: 1850,
+        whatsappMessage: {
+          en: "I'm interested in the 3 gang black or white without frame Smart WiFi Lighting Switch! Price: 1850 L.E",
+          ar: "أنا مهتم بمفتاح الإضاءة الذكي 3 طرف أسود أو أبيض بدون إطار! السعر: 1850 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "4 gang black or white with frame",
+          ar: "مفتاح 4 طرف أسود أو أبيض مع إطار",
+        },
+        urlName: "4_gang_black_or_white_with_frame",
+        description: {
+          en: "Lighting touch switch with frame, 4CH on-off 10 A per channel, support mobile app control & voice command",
+          ar: "مفتاح لمس للإضاءة مع إطار، 4 قنوات تشغيل/إيقاف 10 أمبير لكل قناة، يدعم التحكم عبر التطبيق والأوامر الصوتية",
+        },
+        price_LE: 2000,
+        whatsappMessage: {
+          en: "I'm interested in the 4 gang black or white with frame Smart WiFi Lighting Switch! Price: 2000 L.E",
+          ar: "أنا مهتم بمفتاح الإضاءة الذكي 4 طرف أسود أو أبيض مع إطار! السعر: 2000 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "4 gang black or white without frame",
+          ar: "مفتاح 4 طرف أسود أو أبيض بدون إطار",
+        },
+        urlName: "4_gang_black_or_white_without_frame",
+        description: {
+          en: "Lighting touch switch, 4CH on-off 10 A per channel, support mobile app control & voice command",
+          ar: "مفتاح لمس للإضاءة بدون إطار، 4 قنوات تشغيل/إيقاف 10 أمبير لكل قناة، يدعم التحكم عبر التطبيق والأوامر الصوتية",
+        },
+        price_LE: 1900,
+        whatsappMessage: {
+          en: "I'm interested in the 4 gang black or white without frame Smart WiFi Lighting Switch! Price: 1900 L.E",
+          ar: "أنا مهتم بمفتاح الإضاءة الذكي 4 طرف أسود أو أبيض بدون إطار! السعر: 1900 جنيه",
+        },
+      },
+    ],
+  },
+
+  "IR DEVICES CONTROL": {
+    catName: {
+      en: "IR DEVICES CONTROL",
+      ar: "التحكم في الأجهزة بالأشعة تحت الحمراء (IR)",
     },
-    {
-      name: "2 gang black or white with frame",
-      urlName: "2_gang_black_or_white_with_frame",
-      description:
-        "Lighting touch switch with frame, 2CH on-off 10 A per channel, support mobile app control & voice command",
-      price_LE: 1900,
-      whatsappMessage:
-        "I'm interested in the 2 gang black or white with frame Smart WiFi Lighting Switch! Price: 1900 L.E",
+    products: [
+      {
+        name: {
+          en: "Smart WiFi IR Universal Controller",
+          ar: "جهاز تحكم شامل ذكي بالأشعة تحت الحمراء (WiFi)",
+        },
+        urlName: "Smart_WiFi_IR_Universal_Controller",
+        description: {
+          en: "for all IR devices",
+          ar: "لجميع الأجهزة التي تعمل بالأشعة تحت الحمراء",
+        },
+        price_LE: 1500,
+        whatsappMessage: {
+          en: "I'm interested in the Smart WiFi IR Universal Controller! Price: 1500 L.E",
+          ar: "أنا مهتم بجهاز التحكم الشامل الذكي بالأشعة تحت الحمراء! السعر: 1500 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Smart WiFi IR + RF Universal Controller",
+          ar: "جهاز تحكم شامل ذكي بالأشعة تحت الحمراء وRF (WiFi)",
+        },
+        urlName: "Smart_WiFi_IR_+_RF_Universal_Controller",
+        description: {
+          en: "for all IR devices",
+          ar: "لجميع الأجهزة التي تعمل بالأشعة تحت الحمراء",
+        },
+        price_LE: 2000,
+        whatsappMessage: {
+          en: "I'm interested in the Smart WiFi IR + RF Universal Controller! Price: 2000 L.E",
+          ar: "أنا مهتم بجهاز التحكم الشامل الذكي بالأشعة تحت الحمراء وRF! السعر: 2000 جنيه",
+        },
+      },
+    ],
+  },
+
+  SENSORS: {
+    catName: {
+      en: "SENSORS",
+      ar: "الحساسات",
     },
-    {
-      name: "2 gang black or white without frame",
-      urlName: "2_gang_black_or_white_without_frame",
-      description:
-        "Lighting touch switch, 2CH on-off 10 A per channel, support mobile app control & voice command",
-      price_LE: 1800,
-      whatsappMessage:
-        "I'm interested in the 2 gang black or white without frame Smart WiFi Lighting Switch! Price: 1800 L.E",
+    products: [
+      {
+        name: {
+          en: "Motion sensor",
+          ar: "حساس الحركة",
+        },
+        urlName: "Motion_sensor",
+        description: {
+          en: "WIFI Smart Mini PIR motion Sensor for Smart Security and Home automation System",
+          ar: "حساس حركة ذكي صغير (PIR) يعمل بالواي فاي لأمان المنزل وأنظمة الأتمتة المنزلية",
+        },
+        price_LE: 1250,
+        whatsappMessage: {
+          en: "I'm interested in the Motion sensor! Price: 1250 L.E",
+          ar: "أنا مهتم بحساس الحركة! السعر: 1250 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Door sensor",
+          ar: "حساس الباب",
+        },
+        urlName: "Door_sensor",
+        description: {
+          en: "WIFI Smart Magnetic Door Sensor",
+          ar: "حساس باب مغناطيسي ذكي يعمل بالواي فاي",
+        },
+        price_LE: 1250,
+        whatsappMessage: {
+          en: "I'm interested in the Door sensor! Price: 1250 L.E",
+          ar: "أنا مهتم بحساس الباب! السعر: 1250 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Gas sensor",
+          ar: "حساس الغاز",
+        },
+        urlName: "Gas_sensor",
+        description: {
+          en: "WIFI Smart CO Gas Concretization Fire Leak Security Gas Detector Alarm Sensor For Smart Life Tuya App Home Protection System Control",
+          ar: "حساس غاز ذكي يعمل بالواي فاي للكشف عن غاز أول أكسيد الكربون وتسربات الغاز مع إنذار حماية للمنزل ومتكامل مع تطبيق تويا",
+        },
+        price_LE: 2450,
+        whatsappMessage: {
+          en: "I'm interested in the Gas sensor! Price: 2450 L.E",
+          ar: "أنا مهتم بحساس الغاز! السعر: 2450 جنيه",
+        },
+      },
+    ],
+  },
+
+  "SAFETY PRODUCTS": {
+    catName: {
+      en: "SAFETY PRODUCTS",
+      ar: "منتجات الأمان",
     },
-    {
-      name: "3 gang black or white with frame",
-      urlName: "3_gang_black_or_white_with_frame",
-      description:
-        "Lighting touch switch with frame, 3CH on-off 10 A per channel, support mobile app control & voice command",
-      price_LE: 1950,
-      whatsappMessage:
-        "I'm interested in the 3 gang black or white with frame Smart WiFi Lighting Switch! Price: 1950 L.E",
+    products: [
+      {
+        name: {
+          en: "Circuit breaker",
+          ar: "قاطع كهربائي",
+        },
+        urlName: "Circuit_breaker",
+        description: {
+          en: "Wireless Smart WiFi CB (Miniature Circuit Breaker) Can remotely control opening and closing 1 phase, 125 A",
+          ar: "قاطع كهربائي ذكي لاسلكي يعمل بالواي فاي (MCB) يمكنه التحكم في الفتح والإغلاق عن بُعد، فازة واحدة، 125 أمبير",
+        },
+        price_LE: 5000,
+        whatsappMessage: {
+          en: "I'm interested in the Circuit breaker! Price: 5000 L.E",
+          ar: "أنا مهتم بالقاطع الكهربائي! السعر: 5000 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Water sensor",
+          ar: "حساس المياه",
+        },
+        urlName: "Water_sensor",
+        description: {
+          en: `"Smart Life/Tuya" on iOS and Android to add the device to detect the water level overflow, no hub required. Home in your hand all the time.`,
+          ar: "يعمل مع تطبيق Smart Life/Tuya على iOS وAndroid لإضافة الجهاز للكشف عن تسرب أو ارتفاع مستوى المياه، بدون الحاجة إلى Hub. سيطرة كاملة على المنزل طوال الوقت.",
+        },
+        price_LE: 1450,
+        whatsappMessage: {
+          en: "I'm interested in the Water sensor! Price: 1450 L.E",
+          ar: "أنا مهتم بحساس المياه! السعر: 1450 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Gas & Heat Detector",
+          ar: "كاشف الغاز والحرارة",
+        },
+        urlName: "Gas_&_Heat_Detector",
+        description: {
+          en: "Wi-Fi Smart Gas Alarm Detector. Alarm and APP notification push and close the gas valve",
+          ar: "كاشف إنذار غاز ذكي يعمل بالواي فاي مع تنبيهات عبر التطبيق وإمكانية إغلاق صمام الغاز",
+        },
+        price_LE: 2450,
+        whatsappMessage: {
+          en: "I'm interested in the Gas & Heat Detector! Price: 2450 L.E",
+          ar: "أنا مهتم بكاشف الغاز والحرارة! السعر: 2450 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "(Gas & water) valve",
+          ar: "صمام الغاز والمياه",
+        },
+        urlName: "(Gas_&_water)_valve",
+        description: {
+          en: "Smart Valve to control Water & gas leak Remotely open and close pipe",
+          ar: "صمام ذكي للتحكم في تسرب المياه والغاز مع إمكانية فتح وغلق المواسير عن بُعد",
+        },
+        price_LE: 2900,
+        whatsappMessage: {
+          en: "I'm interested in the (Gas & water) valve! Price: 2900 L.E",
+          ar: "أنا مهتم بصمام الغاز والمياه! السعر: 2900 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Temperature sensor",
+          ar: "حساس الحرارة والرطوبة",
+        },
+        urlName: "Temperature_sensor",
+        description: {
+          en: "Wi-Fi Smart humidity and temperature Alarm Detector. Alarm and APP notification push and close the gas valve",
+          ar: "حساس ذكي لقياس الحرارة والرطوبة يعمل بالواي فاي مع إنذارات وتنبيهات عبر التطبيق وإمكانية غلق صمام الغاز",
+        },
+        price_LE: 2100,
+        whatsappMessage: {
+          en: "I'm interested in the Temperature sensor! Price: 2100 L.E",
+          ar: "أنا مهتم بحساس الحرارة والرطوبة! السعر: 2100 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Tuya camera",
+          ar: "كاميرا تويا",
+        },
+        urlName: "Tuya_camera",
+        description: {
+          en: "Tuya Smart Camera HD 1080P Outdoor/Indoor Wireless WIFI IP Camera Compatible with Alexa & The Google Assistant / Smart Life APP for 2-Way Audio Auto Tracking Night Vision IP66 Waterproof UK Plug",
+          ar: "كاميرا تويا ذكية بدقة 1080P للاستخدام الداخلي والخارجي، تعمل بالواي فاي، متوافقة مع Alexa وGoogle Assistant، تدعم الصوت ثنائي الاتجاه، التتبع التلقائي، الرؤية الليلية، مقاومة للماء بمعيار IP66",
+        },
+        price_LE: 3100,
+        whatsappMessage: {
+          en: "I'm interested in the Tuya camera! Price: 3100 L.E",
+          ar: "أنا مهتم بكاميرا تويا! السعر: 3100 جنيه",
+        },
+      },
+    ],
+  },
+
+  "VOICE CONTROL": {
+    catName: {
+      en: "VOICE CONTROL",
+      ar: "التحكم الصوتي",
     },
-    {
-      name: "3 gang black or white without frame",
-      urlName: "3_gang_black_or_white_without_frame",
-      description:
-        "Lighting touch switch, 3CH on-off 10 A per channel, support mobile app control & voice command",
-      price_LE: 1850,
-      whatsappMessage:
-        "I'm interested in the 3 gang black or white without frame Smart WiFi Lighting Switch! Price: 1850 L.E",
+    products: [
+      {
+        name: {
+          en: "Alexa Echo dot 3",
+          ar: "أليكسا إيكو دوت 3",
+        },
+        urlName: "Alexa_Echo_dot_3",
+        description: {
+          en: "Smart speaker with Alexa",
+          ar: "مكبر صوت ذكي مع أليكسا",
+        },
+        price_LE: 3600,
+        whatsappMessage: {
+          en: "I'm interested in the Alexa Echo dot 3! Price: 3600 L.E",
+          ar: "أنا مهتم بأليكسا إيكو دوت 3! السعر: 3600 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Alexa 4th generation",
+          ar: "أليكسا الجيل الرابع",
+        },
+        urlName: "Alexa_4th_generation",
+        description: {
+          en: "Smart speaker with Alexa",
+          ar: "مكبر صوت ذكي مع أليكسا",
+        },
+        price_LE: 4750,
+        whatsappMessage: {
+          en: "I'm interested in the Alexa 4th generation! Price: 4750 L.E",
+          ar: "أنا مهتم بأليكسا الجيل الرابع! السعر: 4750 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Alexa 5th generation",
+          ar: "أليكسا الجيل الخامس",
+        },
+        urlName: "Alexa_5th_generation",
+        description: {
+          en: "Smart speaker with Alexa",
+          ar: "مكبر صوت ذكي مع أليكسا",
+        },
+        price_LE: 5500,
+        whatsappMessage: {
+          en: "I'm interested in the Alexa 5th generation! Price: 5500 L.E",
+          ar: "أنا مهتم بأليكسا الجيل الخامس! السعر: 5500 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Alexa Echo show 5",
+          ar: "أليكسا إيكو شو 5",
+        },
+        urlName: "Alexa_Echo_show_5",
+        description: {
+          en: "5.5 inch HD Smart touchscreen, Camera: 2MP",
+          ar: "شاشة لمس ذكية 5.5 بوصة بدقة HD، كاميرا: 2 ميجابكسل",
+        },
+        price_LE: 8000,
+        whatsappMessage: {
+          en: "I'm interested in the Alexa Echo show 5! Price: 8000 L.E",
+          ar: "أنا مهتم بأليكسا إيكو شو 5! السعر: 8000 جنيه",
+        },
+      },
+    ],
+  },
+
+  "SMART DOOR LOCK": {
+    catName: {
+      en: "SMART DOOR LOCK",
+      ar: "أقفال الأبواب الذكية",
     },
-    {
-      name: "4 gang black or white with frame",
-      urlName: "4_gang_black_or_white_with_frame",
-      description:
-        "Lighting touch switch with frame, 4CH on-off 10 A per channel, support mobile app control & voice command",
-      price_LE: 2000,
-      whatsappMessage:
-        "I'm interested in the 4 gang black or white with frame Smart WiFi Lighting Switch! Price: 2000 L.E",
-    },
-    {
-      name: "4 gang black or white without frame",
-      urlName: "4_gang_black_or_white_without_frame",
-      description:
-        "Lighting touch switch, 4CH on-off 10 A per channel, support mobile app control & voice command",
-      price_LE: 1900,
-      whatsappMessage:
-        "I'm interested in the 4 gang black or white without frame Smart WiFi Lighting Switch! Price: 1900 L.E",
-    },
-  ],
-  "IR DEVICES CONTROL": [
-    {
-      name: "Smart WiFi IR Universal Controller",
-      urlName: "Smart_WiFi_IR_Universal_Controller",
-      description: "for all IR devices",
-      price_LE: 1500,
-      whatsappMessage:
-        "I'm interested in the Smart WiFi IR Universal Controller! Price: 1500 L.E",
-    },
-    {
-      name: "Smart WiFi IR + RF Universal Controller",
-      urlName: "Smart_WiFi_IR_+_RF_Universal_Controller",
-      description: "for all IR devices",
-      price_LE: 2000,
-      whatsappMessage:
-        "I'm interested in the Smart WiFi IR + RF Universal Controller! Price: 2000 L.E",
-    },
-  ],
-  SENSORS: [
-    {
-      name: "Motion sensor",
-      urlName: "Motion_sensor",
-      description:
-        "WIFI Smart Mini PIR motion Sensor for Smart Security and Home automation System",
-      price_LE: 1250,
-      whatsappMessage: "I'm interested in the Motion sensor! Price: 1250 L.E",
-    },
-    {
-      name: "Door sensor",
-      urlName: "Door_sensor",
-      description: "WIFI Smart Magnetic Door Sensor",
-      price_LE: 1250,
-      whatsappMessage: "I'm interested in the Door sensor! Price: 1250 L.E",
-    },
-    {
-      name: "Gas sensor",
-      urlName: "Gas_sensor",
-      description:
-        "WIFI Smart CO Gas Concretization Fire Leak Security Gas Detector Alarm Sensor For Smart Life Tuya App Home Protection System Control",
-      price_LE: 2450,
-      whatsappMessage: "I'm interested in the Gas sensor! Price: 2450 L.E",
-    },
-  ],
-  "SAFETY PRODUCTS": [
-    {
-      name: "Circuit breaker",
-      urlName: "Circuit_breaker",
-      description:
-        "Wireless Smart WiFi CB (Miniature Circuit Breaker) Can remotely control opening and closing 1 phase, 125 A",
-      price_LE: 5000,
-      whatsappMessage: "I'm interested in the Circuit breaker! Price: 5000 L.E",
-    },
-    {
-      name: "Water sensor",
-      urlName: "Water_sensor",
-      description:
-        '"Smart Life/Tuya" on iOS and Android to add the device to detect the water level overflow, no hub required. Home in your hand all the time.',
-      price_LE: 1450,
-      whatsappMessage: "I'm interested in the Water sensor! Price: 1450 L.E",
-    },
-    {
-      name: "Gas & Heat Detector",
-      urlName: "Gas_&_Heat_Detector",
-      description:
-        "Wi-Fi Smart Gas Alarm Detector. Alarm and APP notification push and close the gas valve",
-      price_LE: 2450,
-      whatsappMessage:
-        "I'm interested in the Gas & Heat Detector! Price: 2450 L.E",
-    },
-    {
-      name: "(Gas & water) valve",
-      urlName: "(Gas_&_water)_valve",
-      description:
-        "Smart Valve to control Water & gas leak Remotely open and close pipe",
-      price_LE: 2900,
-      whatsappMessage:
-        "I'm interested in the (Gas & water) valve! Price: 2900 L.E",
-    },
-    {
-      name: "Temperature sensor",
-      urlName: "Temperature_sensor",
-      description:
-        "Wi-Fi Smart humidity and temperature Alarm Detector. Alarm and APP notification push and close the gas valve",
-      price_LE: 2100,
-      whatsappMessage:
-        "I'm interested in the Temperature sensor! Price: 2100 L.E",
-    },
-    {
-      name: "Tuya camera",
-      urlName: "Tuya_camera",
-      description:
-        "Tuya Smart Camera HD 1080P Outdoor/Indoor Wireless WIFI IP Camera Compatible with Alexa & The Google Assistant / Smart Life APP for 2-Way Audio Auto Tracking Night Vision IP66 Waterproof UK Plug",
-      price_LE: 3100,
-      whatsappMessage: "I'm interested in the Tuya camera! Price: 3100 L.E",
-    },
-  ],
-  "VOICE CONTROL": [
-    {
-      name: "Alexa Echo dot 3",
-      urlName: "Alexa_Echo_dot_3",
-      description: "Smart speaker with Alexa",
-      price_LE: 3600,
-      whatsappMessage:
-        "I'm interested in the Alexa Echo dot 3! Price: 3600 L.E",
-    },
-    {
-      name: "Alexa 4th generation",
-      urlName: "Alexa_4th_generation",
-      description: "Smart speaker with Alexa",
-      price_LE: 4750,
-      whatsappMessage:
-        "I'm interested in the Alexa 4th generation! Price: 4750 L.E",
-    },
-    {
-      name: "Alexa 5th generation",
-      urlName: "Alexa_5th_generation",
-      description: "Smart speaker with Alexa",
-      price_LE: 5500,
-      whatsappMessage:
-        "I'm interested in the Alexa 5th generation! Price: 5500 L.E",
-    },
-    {
-      name: "Alexa Echo show 5",
-      urlName: "Alexa_Echo_show_5",
-      description: "5.5 inch HD Smart touchscreen, Camera: 2MP",
-      price_LE: 8000,
-      whatsappMessage:
-        "I'm interested in the Alexa Echo show 5! Price: 8000 L.E",
-    },
-  ],
-  "SMART DOOR LOCK": [
-    {
-      name: "Smart door lock for Iron doors",
-      urlName: "Smart_door_lock_for_Iron_doors",
-      description:
-        "[ fingerprint, password and card ] 200 user Application remote control",
-      price_LE: 6650,
-      whatsappMessage:
-        "I'm interested in the Smart door lock for Iron doors! Price: 6650 L.E",
-    },
-    {
-      name: "Smart door lock for Alum. doors",
-      urlName: "Smart_door_lock_for_Alum._doors",
-      description:
-        "[ fingerprint, password and card ] 200 user Application remote control",
-      price_LE: 9100,
-      whatsappMessage:
-        "I'm interested in the Smart door lock for Alum. doors! Price: 9100 L.E",
-    },
-    {
-      name: "Smart door lock for wooden or Armored doors",
-      urlName: "Smart_door_lock_for_wooden_or_Armored_doors",
-      description:
-        "[ fingerprint, password and card ] 200 user Application remote control",
-      price_LE: 7500,
-      whatsappMessage:
-        "I'm interested in the Smart door lock for wooden or Armored doors! Price: 7500 L.E",
-    },
-    {
-      name: "Magic Smart door lock",
-      urlName: "Magic_Smart_door_lock",
-      description:
-        "Face detection, fingerprint, password and card 200 user Application remote control intercom HD Camera",
-      price_LE: 13500,
-      whatsappMessage:
-        "I'm interested in the Magic Smart door lock! Price: 13500 L.E",
-    },
-  ],
+    products: [
+      {
+        name: {
+          en: "Smart door lock for Iron doors",
+          ar: "قفل باب ذكي للأبواب الحديدية",
+        },
+        urlName: "Smart_door_lock_for_Iron_doors",
+        description: {
+          en: "[ fingerprint, password and card ] 200 user Application remote control",
+          ar: "[بصمة، كلمة مرور وبطاقة] يدعم 200 مستخدم مع التحكم عن بُعد عبر التطبيق",
+        },
+        price_LE: 6650,
+        whatsappMessage: {
+          en: "I'm interested in the Smart door lock for Iron doors! Price: 6650 L.E",
+          ar: "أنا مهتم بقفل الباب الذكي للأبواب الحديدية! السعر: 6650 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Smart door lock for Alum. doors",
+          ar: "قفل باب ذكي للأبواب الألومنيوم",
+        },
+        urlName: "Smart_door_lock_for_Alum._doors",
+        description: {
+          en: "[ fingerprint, password and card ] 200 user Application remote control",
+          ar: "[بصمة، كلمة مرور وبطاقة] يدعم 200 مستخدم مع التحكم عن بُعد عبر التطبيق",
+        },
+        price_LE: 9100,
+        whatsappMessage: {
+          en: "I'm interested in the Smart door lock for Alum. doors! Price: 9100 L.E",
+          ar: "أنا مهتم بقفل الباب الذكي للأبواب الألومنيوم! السعر: 9100 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Smart door lock for wooden or Armored doors",
+          ar: "قفل باب ذكي للأبواب الخشبية أو المصفحة",
+        },
+        urlName: "Smart_door_lock_for_wooden_or_Armored_doors",
+        description: {
+          en: "[ fingerprint, password and card ] 200 user Application remote control",
+          ar: "[بصمة، كلمة مرور وبطاقة] يدعم 200 مستخدم مع التحكم عن بُعد عبر التطبيق",
+        },
+        price_LE: 7500,
+        whatsappMessage: {
+          en: "I'm interested in the Smart door lock for wooden or Armored doors! Price: 7500 L.E",
+          ar: "أنا مهتم بقفل الباب الذكي للأبواب الخشبية أو المصفحة! السعر: 7500 جنيه",
+        },
+      },
+      {
+        name: {
+          en: "Magic Smart door lock",
+          ar: "قفل باب ذكي ماجيك",
+        },
+        urlName: "Magic_Smart_door_lock",
+        description: {
+          en: "Face detection, fingerprint, password and card 200 user Application remote control intercom HD Camera",
+          ar: "كشف الوجه، بصمة، كلمة مرور وبطاقة، يدعم 200 مستخدم مع التحكم عن بُعد، إنتركم وكاميرا HD",
+        },
+        price_LE: 13500,
+        whatsappMessage: {
+          en: "I'm interested in the Magic Smart door lock! Price: 13500 L.E",
+          ar: "أنا مهتم بقفل الباب الذكي ماجيك! السعر: 13500 جنيه",
+        },
+      },
+    ],
+  },
 };
+
 export const getCategory = (categoryName: string) => {
   return Products[categoryName];
 };
-export const getProduct = (
-  productName: string,
-  categoryName: string,
-): ProductI => {
-  return getCategory(categoryName)?.find(
-    (e: ProductI) => e.urlName === productName,
-  );
+
+export const getProduct = (productName: string, categoryName: string) => {
+  const cat = getCategory(categoryName);
+  const prod = cat.products?.find((e: ProductI) => e.urlName === productName);
+  return {
+    categoryName: cat.catName,
+    product: prod as ProductI,
+  };
 };
 
 export function productWhatsAppMessageConstructor(
@@ -297,26 +542,62 @@ export function constructOffersImagePath(offerName: string) {
 export const offers = [
   {
     id: 1,
-    name: "Show",
+    name: { en: "Show", ar: "عرض" },
     items: [
-      { quantity: 1, name: "2 gang black or white without frame" },
-      { quantity: 1, name: "Smart WiFi IR Universal Controller" },
+      {
+        quantity: 1,
+        name: {
+          en: "2 gang black or white without frame",
+          ar: "مفتاح 2 طرف أسود أو أبيض بدون إطار",
+        },
+      },
+      {
+        quantity: 1,
+        name: {
+          en: "Smart WiFi IR Universal Controller",
+          ar: "جهاز تحكم عالمي ذكي بالواي فاي للأجهزة IR",
+        },
+      },
     ],
   },
   {
     id: 2,
-    name: "Room 1",
+    name: { en: "Room 1", ar: "الغرفة 1" },
     items: [
-      { quantity: 2, name: "2 gang black or white without frame" },
-      { quantity: 1, name: "Smart WiFi IR Universal Controller" },
+      {
+        quantity: 2,
+        name: {
+          en: "2 gang black or white without frame",
+          ar: "مفتاح 2 طرف أسود أو أبيض بدون إطار",
+        },
+      },
+      {
+        quantity: 1,
+        name: {
+          en: "Smart WiFi IR Universal Controller",
+          ar: "جهاز تحكم عالمي ذكي بالواي فاي للأجهزة IR",
+        },
+      },
     ],
   },
   {
     id: 3,
-    name: "Room 2",
+    name: { en: "Room 2", ar: "الغرفة 2" },
     items: [
-      { quantity: 4, name: "2 gang black or white without frame" },
-      { quantity: 2, name: "Smart WiFi IR Universal Controller" },
+      {
+        quantity: 4,
+        name: {
+          en: "2 gang black or white without frame",
+          ar: "مفتاح 2 طرف أسود أو أبيض بدون إطار",
+        },
+      },
+      {
+        quantity: 2,
+        name: {
+          en: "Smart WiFi IR Universal Controller",
+          ar: "جهاز تحكم عالمي ذكي بالواي فاي للأجهزة IR",
+        },
+      },
     ],
   },
   // {
@@ -331,12 +612,33 @@ export const offers = [
   // },
   {
     id: 5,
-    name: "Home 2",
+    name: { en: "Home 2", ar: "المنزل 2" },
     items: [
-      { quantity: 10, name: "2 gang black or white without frame" },
-      { quantity: 3, name: "Smart WiFi IR Universal Controller" },
-      { quantity: 1, name: "Alexa Echo dot 3" },
-      { quantity: 1, name: "Smart door lock for wooden or Armored doors" },
+      {
+        quantity: 10,
+        name: {
+          en: "2 gang black or white without frame",
+          ar: "مفتاح 2 طرف أسود أو أبيض بدون إطار",
+        },
+      },
+      {
+        quantity: 3,
+        name: {
+          en: "Smart WiFi IR Universal Controller",
+          ar: "جهاز تحكم عالمي ذكي بالواي فاي للأجهزة IR",
+        },
+      },
+      {
+        quantity: 1,
+        name: { en: "Alexa Echo dot 3", ar: "أليكسا إيكو دوت 3" },
+      },
+      {
+        quantity: 1,
+        name: {
+          en: "Smart door lock for wooden or Armored doors",
+          ar: "قفل ذكي للأبواب الخشبية أو المدرعة",
+        },
+      },
     ],
   },
   // {

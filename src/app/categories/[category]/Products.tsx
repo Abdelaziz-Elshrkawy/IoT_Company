@@ -1,4 +1,5 @@
 "use client";
+import { useLanguage } from "@/contexts/language";
 import Back from "@/components/general/Back";
 import LoadingImage from "@/components/general/LoadingImage";
 import ProductUrl from "@/components/general/productUrl";
@@ -10,17 +11,23 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 export default function ProductsPage({ category }: { category: string }) {
+  const { lang, dir } = useLanguage();
   const currentCategory = decodeURIComponent(category);
-  const products = Products[currentCategory];
+  const products = Products[currentCategory].products;
+  const catName = Products[currentCategory].catName;
   return (
     <main
       key={new Date().toString()}
       className="relative min-h-screen bg-gray-900 px-6 py-16 text-black md:px-12"
     >
-      <Back color="white" route="/categories" text="Categories" />
-      <div key={currentCategory} className="mt-10 mb-16">
+      <Back
+        color="white"
+        route="/categories"
+        text={lang === "en" ? "Categories" : "الفئات"}
+      />
+      <div dir={dir} key={currentCategory} className="mt-10 mb-16">
         <h2 className="mb-8 border-b-2 border-gray-600 pb-2 text-3xl font-semibold text-white">
-          {currentCategory} PRODUCTS
+          {catName[lang]} {lang === "en" ? "PRODUCTS" : ""}
         </h2>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products &&
@@ -43,13 +50,15 @@ export default function ProductsPage({ category }: { category: string }) {
                     <Image
                       width={300}
                       height={300}
-                      src={constructProductImagePath(product.name)}
-                      alt={product.name}
+                      src={constructProductImagePath(product.name["en"])}
+                      alt={product.name[lang]}
                       className="mb-4 rounded-lg object-contain transition-all duration-200 hover:scale-105"
                     />
                   </Link>
                 </Suspense>
-                <h3 className="mb-2 text-xl font-semibold">{product.name}</h3>
+                <h3 className="mb-2 text-xl font-semibold">
+                  {product.name[lang]}
+                </h3>
                 {/* <p className="text-gray-800 mb-4 flex-grow">
                   {product.description}
                 </p> */}

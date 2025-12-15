@@ -1,12 +1,51 @@
 "use client";
 
+import ProductCard from "@/components/general/ProductCard";
+import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/language";
+import { Products } from "@/helpers/helpers";
+import { FeatureI } from "@/types/types";
 import { motion } from "framer-motion";
 import { HomeIcon, ShieldCheck } from "lucide-react";
-import { FeatureI } from "@/types/types";
-import { useLanguage } from "@/contexts/language";
+import Link from "next/link";
+import { useMemo, useState } from "react";
 
 export default function Home() {
   const { lang, dir } = useLanguage();
+
+  const categoriesData = useMemo(() => {
+    return Object.entries(Products).map(([key, data]) => ({
+      key, // category key
+      name: data.catName, // localized name
+      products: data.products, // full products list
+    }));
+  }, []);
+
+  const [activeCategory, setActiveCategory] = useState(categoriesData[0]?.key);
+
+  console.log(categoriesData);
+
+  // useEffect(() => {
+  //   if (!categoriesData.length) return;
+
+  //   const id = setInterval(() => {
+  //     setActiveCategory((prev) => {
+  //       const index = categoriesData.findIndex((e) => e.key === prev);
+
+  //       const nextIndex = (index + 1) % categoriesData.length;
+
+  //       return categoriesData[nextIndex].key;
+  //     });
+  //   }, 4000);
+
+  //   return () => clearInterval(id);
+  // }, [categoriesData]);
+
+  const activeCategoryProducts = useMemo(() => {
+    const category = categoriesData.find((cat) => cat.key === activeCategory);
+
+    return category ? category.products.slice(0, 3) : [];
+  }, [activeCategory, categoriesData]);
 
   const homeIntro = {
     description: {
@@ -79,6 +118,40 @@ export default function Home() {
           {homeIntro.description[lang]}
         </motion.p>
       </motion.section>
+
+      <div className="mt-2 mb-8 flex flex-wrap justify-center gap-3">
+        {categoriesData.map((cat) => (
+          <Button
+            key={cat.key}
+            onClick={() => setActiveCategory(cat.key)}
+            className={`cursor-pointer rounded-full px-5 py-2 text-sm font-semibold transition-all duration-300 ${
+              activeCategory === cat.key
+                ? "bg-teal-500 text-white shadow-lg shadow-teal-500/30"
+                : "bg-[#132033] text-gray-300 hover:bg-[#0f1e38] hover:text-white"
+            }`}
+          >
+            {cat.name[lang]}
+          </Button>
+        ))}
+        <div className="flex flex-col items-center justify-center">
+          <div dir={dir} className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {activeCategoryProducts.map((product, index) => (
+              <ProductCard
+                key={product.urlName}
+                product={product}
+                category={activeCategory}
+                index={index}
+              />
+            ))}
+          </div>
+          <Link
+            href={`/categories/${encodeURIComponent(activeCategory)}`}
+            className="mt-4 inline-flex w-fit items-center justify-center rounded-md bg-teal-500 px-6 py-3 font-semibold text-white transition hover:bg-teal-600"
+          >
+            {lang === "en" ? "View All Products" : "عرض جميع المنتجات"}
+          </Link>
+        </div>
+      </div>
 
       {/* Features Section */}
       {features.map((feature: FeatureI) => (

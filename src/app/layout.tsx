@@ -1,11 +1,11 @@
+import Footer from "@/components/general/Footer";
+import { NavigationBar } from "@/components/general/NavigationBar";
+import { LanguageProvider } from "@/contexts/language";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { NavigationBar } from "@/components/general/NavigationBar";
-import Footer from "@/components/general/Footer";
-import { Toaster } from "sonner";
 import React from "react";
-import { LanguageProvider } from "@/contexts/language";
+import { Toaster } from "sonner";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "KPEK",
   description:
     "IoT Smart Home Company Aiming to provide and enhance smart home experience.",
+  verification: {
+    google: "google4e250d8943a8f0d7",
+  },
 };
 
 export default function RootLayout({

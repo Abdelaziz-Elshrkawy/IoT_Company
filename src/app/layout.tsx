@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "IoT Smart Home Company Aiming to provide and enhance smart home experience.",
   verification: {
-    google: "google4e250d8943a8f0d7",
+    google: "tyka86vTYgbEMPDGsiKXSwQttHIWGfgalb_y5TX0Fbc",
   },
 };
 
